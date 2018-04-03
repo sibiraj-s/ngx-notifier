@@ -1,0 +1,87 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+.chevron {
+    &::before {
+        border-style: solid;
+        border-width: 0.15rem 0.15rem 0 0;
+        content: '';
+        display: inline-block;
+        height: 0.45em;
+        position: relative;
+        transform: rotate(-45deg);
+        width: 0.45em;
+    }
+
+    &.right {
+        &::before {
+            left: 0;
+            transform: rotate(45deg);
+        }
+    }
+
+    &.bottom {
+        &::before {
+            top: 0;
+            transform: rotate(135deg);
+        }
+    }
+
+    &.left {
+        &::before {
+            left: 0.25em;
+            transform: rotate(-135deg);
+        }
+    }
+}
+
+.ngx-notifier {
+    position: fixed;
+    min-width: 25rem;
+    max-width: 25rem;
+    right: 1rem;
+    bottom: 1rem;
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    .ngx-n-notification {
+        margin-top: 0.5rem;
+        border-radius: 4px;
+        padding: 0.5rem;
+
+        @extend .fadeIn;
+
+        p {
+            margin: 0;
+        }
+
+        .close {
+            font-size: 1.2rem;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        animation-duration: 0.8s;
+    }
+
+    @media only screen and (max-width: 420px) {
+        min-width: 20rem;
+        max-width: 20rem;
+    }
+}

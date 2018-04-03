@@ -1,0 +1,11 @@
+<div class="ngx-notifier" *ngIf="notifications?.length !== 0" [ngClass]="className">
+  <div [ngClass]="{'pointer': dismissOnClick}">
+    <div class="ngx-n-notification alert" role="alert" *ngFor="let notification of notifications; let i = index" [ngClass]="'alert-'+ notification.style"
+      (click)="dismissOnClick && removeNotification(i)">
+      <button type="button" class="close" aria-label="Close" (click)="removeNotification(i)">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <p [innerHTML]="notification.message"> </p>
+    </div>
+  </div>
+</div>

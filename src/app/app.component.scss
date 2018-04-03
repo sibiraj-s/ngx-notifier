@@ -1,0 +1,26 @@
+.home-page {
+    padding-top: 4rem;
+
+    .m-ctnt {
+        text-align: center;
+        width: 50%;
+        margin: auto;
+
+        img {
+            width: 20rem;
+        }
+
+        .notifiers {
+            margin-bottom: 2rem;
+
+            button {
+                width: 5rem;
+
+                &:focus,
+                &active {
+                    box-shadow: none !important;
+                }
+            }
+        }
+    }
+}

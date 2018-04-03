@@ -1,0 +1,81 @@
+{
+  "name": "ngx-notifier",
+  "version": "1.0.0",
+  "description": "A Simple Notification Service for Angular 5+ Applications",
+  "license": "MIT",
+  "scripts": {
+    "build": "ng build --prod",
+    "build:package": "sh ./scripts/build.sh",
+    "docs": "./node_modules/.bin/compodoc --tsconfig=\"src/tsconfig.app.json\" -n \"NgxNotifier\" --disableCoverage --disablePrivate --disableInternal --disableLifeCycleHooks --disableProtected --hideGenerator --customFavicon=\"src/favicon.ico\" --output=\"docs/\"",
+    "e2e": "ng e2e",
+    "lint": "ng lint",
+    "ng": "ng",
+    "postbuild": "npm run build:package",
+    "prebuild": "npm run lint",
+    "precommit": "npm run test:single-run",
+    "prerelease": "npm run build",
+    "release": "sh ./scripts/release.sh",
+    "start": "ng serve --aot -o --host 0.0.0.0 --port 4160",
+    "serve:docs": "./node_modules/.bin/compodoc --serve --open --output=\"docs/\"",
+    "test": "ng test",
+    "test:single-run": "npm run lint && ng test --watch false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sibiraj-S/ngx-notifier.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sibiraj-S/ngx-notifier/issues"
+  },
+  "homepage": "https://github.com/Sibiraj-S/ngx-notifier",
+  "peerDependencies": {
+    "@angular/common": "^5.2.0",
+    "@angular/core": "^5.2.0",
+    "bootstrap": "^4.0.0",
+    "rxjs": "^5.5.6"
+  },
+  "devDependencies": {
+    "@angular/animations": "^5.2.0",
+    "@angular/cli": "~1.7.3",
+    "@angular/common": "^5.2.0",
+    "@angular/compiler": "^5.2.0",
+    "@angular/compiler-cli": "^5.2.0",
+    "@angular/core": "^5.2.0",
+    "@angular/forms": "^5.2.0",
+    "@angular/http": "^5.2.0",
+    "@angular/language-service": "^5.2.0",
+    "@angular/platform-browser": "^5.2.0",
+    "@angular/platform-browser-dynamic": "^5.2.0",
+    "@angular/router": "^5.2.0",
+    "@compodoc/compodoc": "^1.1.1",
+    "@types/jasmine": "~2.8.3",
+    "@types/jasminewd2": "~2.0.2",
+    "@types/node": "~6.0.60",
+    "bootstrap": "^4.0.0",
+    "codelyzer": "^4.0.1",
+    "commitizen": "^2.9.6",
+    "core-js": "^2.4.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^0.14.3",
+    "jasmine-core": "~2.8.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~2.0.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "ng-packagr": "^2.4.1",
+    "protractor": "~5.1.2",
+    "rxjs": "^5.5.6",
+    "ts-node": "~4.1.0",
+    "tsickle": "^0.27.2",
+    "tslint": "~5.9.1",
+    "typescript": "~2.5.3",
+    "zone.js": "^0.8.19"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
+}
