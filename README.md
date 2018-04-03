@@ -63,6 +63,13 @@ To create notification
 ```ts
 import { NgxNotifierService } from './ngx-notifier/services/ngx-notifier.service';
 
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  providers: [AppService]
+})
+
 export class AppComponent {
   constructor(private _ngxNotifierService: NgxNotifierService) { }
 
