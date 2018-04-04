@@ -33,9 +33,15 @@ export class AppComponent implements OnInit, OnDestroy {
       });
   }
 
+  /** crates a toast message */
   createToast(style: string): void {
     this._ngxNotifierService.createToast(this.jsonArray[Math.floor(Math.random() * this.jsonArray.length)], style);
     return;
+  }
+
+  /** clears all toast messages */
+  clearToasts() {
+    this._ngxNotifierService.clear();
   }
 
   ngOnInit() {

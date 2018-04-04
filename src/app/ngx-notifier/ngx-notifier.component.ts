@@ -38,6 +38,10 @@ export class NgxNotifierComponent {
     this._ngxNotifierService.notification.subscribe((notification: INotification) => {
       this.updateNotifications(notification);
     });
+
+    this._ngxNotifierService.clearToasts.subscribe(() => {
+      this.notifications = [];
+    });
   }
 
   /**
