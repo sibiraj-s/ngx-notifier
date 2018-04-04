@@ -28,6 +28,8 @@
 
 ngx-notifier is a simple notification service for Angular 5+ applications and is meant to be simple with limited features. Applications using bootstrap4 can make use of it to make simple toast notifications.
 
+If you are looking for angularjs(1.x) version, Try [angularjs-toast][angularjs-toast]
+
 ### Installation
 
 Install via Package managers such as [npm][npm] or [yarn][yarn]
@@ -114,6 +116,7 @@ Documentation is auto-generated using [compodoc][compodoc], and can be viewed he
 [npm]: https://www.npmjs.com/
 [yarn]: https://yarnpkg.com/lang/en/
 [github]: https://sibiraj-s.github.io/
+[angularjs-toast]: https://github.com/Sibiraj-S/angularjs-toast
 [wiki]: https://github.com/Sibiraj-S/ngx-notifier/wiki/ngx-notifier
 [Bootstrap4]: https://github.com/twbs/bootstrap
 [compodoc]: https://compodoc.github.io/website/
