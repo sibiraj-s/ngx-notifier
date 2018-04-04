@@ -118,7 +118,7 @@ export class NgxNotifierComponent implements OnDestroy {
    * @param index position of the element
    */
   removeNotification(index: number): void {
-    if (index) {
+    if (index !== undefined || index !== null) {
       this.notifications.splice(index, 1);
     }
     return;
