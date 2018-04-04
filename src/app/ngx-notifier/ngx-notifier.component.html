@@ -5,7 +5,8 @@
       <button type="button" class="close" aria-label="Close" (click)="removeNotification(i)">
         <span aria-hidden="true">&times;</span>
       </button>
-      <p [innerHTML]="notification.message"> </p>
+      <p *ngIf="allowHTML" [innerHTML]="notification.message"> </p>
+      <p *ngIf="!allowHTML">{{ notification.message }} </p>
     </div>
   </div>
 </div>

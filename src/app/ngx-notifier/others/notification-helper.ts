@@ -1,3 +1,5 @@
+import { SafeHtml } from '@angular/platform-browser';
+
 /** Notification Class */
 export class Notification {
 
@@ -30,7 +32,7 @@ export interface INotification {
     /** unique id for each notification */
     id: string;
     /** message to be shown */
-    message: string;
+    message: string | SafeHtml;
     /** bootstrap background colors */
     style?: string;
     /** timeout for notification */

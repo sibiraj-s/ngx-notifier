@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Sanitizer } from '@angular/core';
 
 import { Notification } from '../others/notification-helper';
 import { NgxNotifierSubscriberService } from './subscriber/ngx-notifier-subscriber.service';

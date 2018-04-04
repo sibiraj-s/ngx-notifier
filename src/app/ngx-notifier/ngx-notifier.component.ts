@@ -1,4 +1,5 @@
-import { Component, Input, OnDestroy, Sanitizer } from '@angular/core';
+import { Component, Input, OnDestroy, SecurityContext } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
 
@@ -22,6 +23,8 @@ export class NgxNotifierComponent implements OnDestroy {
 
   /** whether to allow duplicate messages or not */
   @Input() allowDuplicates = true;
+  /** allow HTML */
+  @Input() allowHTML = true;
   /** custom class to be attached */
   @Input() className: string;
   /** default duration for dismissing notifications (60s/1minute) */
@@ -44,7 +47,7 @@ export class NgxNotifierComponent implements OnDestroy {
    *
    * @param _ngxNotifierSubscriberService subscribe to get values form notifier service
    */
-  constructor(private _ngxNotifierSubscriberService: NgxNotifierSubscriberService) {
+  constructor(private _ngxNotifierSubscriberService: NgxNotifierSubscriberService, private _domSanitizer: DomSanitizer) {
 
     this._ngxNotifierSubscriberService.notification.takeUntil(this.componentDestroyed$)
       .subscribe((notification: INotification) => { this.updateNotifications(notification); });
@@ -72,6 +75,15 @@ export class NgxNotifierComponent implements OnDestroy {
 
     // save the last inserted Id
     this.lastInsertedNotificationId = notification.id;
+
+    // sanitize html if enableHTML is set to true
+    let sanitizedMessage: string | SafeHtml;
+    if (notification.message && this.allowHTML) {
+      sanitizedMessage = this._domSanitizer.sanitize(SecurityContext.HTML, notification.message);
+    }
+    // set sanitized output to notification message
+    notification['message'] = sanitizedMessage || notification.message;
+
     // insert notification in the first position of the array
     if (this.insertOnTop) {
       this.notifications.unshift(notification);
