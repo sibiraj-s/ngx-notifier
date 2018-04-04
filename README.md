@@ -110,6 +110,7 @@ Notifier component accepts
 
 ```html
 <app-ngx-notifier [allowDuplicates]="true"
+                  [allowHTML]="false"
                   [className]="myCustomClassName"
                   [duration]="5000"
                   [dismissOnClick]="false"
@@ -119,6 +120,7 @@ Notifier component accepts
 ```
 
 * **allowDuplicates:** whether to allow duplicate messages in notifications
+* **allowHTML** whether to allow or display HTML as it is, HTML will be sanitized and any JS will be maked as unsafe.
 * **className** custom class for notifications
 * **dismissOnClick:** dismiss notification on click
 * **duration** time in milliseconds for dismissing notifications, default is 60s

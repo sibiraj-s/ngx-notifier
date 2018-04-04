@@ -23,8 +23,8 @@ export class NgxNotifierComponent implements OnDestroy {
 
   /** whether to allow duplicate messages or not */
   @Input() allowDuplicates = true;
-  /** allow HTML */
-  @Input() allowHTML = true;
+  /** allow HTML in notification */
+  @Input() allowHTML = false;
   /** custom class to be attached */
   @Input() className: string;
   /** default duration for dismissing notifications (60s/1minute) */
