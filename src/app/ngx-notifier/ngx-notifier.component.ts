@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/operator/takeUntil';
 
 import { INotification } from './others/notification-helper';
 
@@ -13,7 +15,9 @@ import { NgxNotifierService } from './services/ngx-notifier.service';
   styleUrls: ['./ngx-notifier.component.scss']
 })
 
-export class NgxNotifierComponent {
+export class NgxNotifierComponent implements OnDestroy {
+
+  private componentDestroyed$: Subject<boolean> = new Subject();
 
   /** whether to allow duplicate messages or not */
   @Input() allowDuplicates = true;
@@ -40,17 +44,13 @@ export class NgxNotifierComponent {
    * @param _ngxNotifierService Notifier Service
    */
   constructor(private _ngxNotifierService: NgxNotifierService) {
-    this._ngxNotifierService.notification.subscribe((notification: INotification) => {
-      this.updateNotifications(notification);
-    });
 
-    this._ngxNotifierService.clearToasts.subscribe(() => {
-      this.notifications = [];
-    });
+    this._ngxNotifierService.notification.takeUntil(this.componentDestroyed$)
+      .subscribe((notification: INotification) => { this.updateNotifications(notification); });
 
-    this._ngxNotifierService.clearLastToast.subscribe(() => {
-      this.clearLastToast();
-    });
+    this._ngxNotifierService.clearToasts.takeUntil(this.componentDestroyed$).subscribe(() => { this.notifications = []; });
+
+    this._ngxNotifierService.clearLastToast.takeUntil(this.componentDestroyed$).subscribe(() => { this.clearLastToast(); });
   }
 
   /**
@@ -114,6 +114,12 @@ export class NgxNotifierComponent {
     if (this.notifications.length !== 0 && index !== -1) {
       this.notifications.splice(index, 1);
     }
+  }
+
+  /** stop subscription when component is destroyed */
+  ngOnDestroy() {
+    this.componentDestroyed$.next();
+    this.componentDestroyed$.complete();
   }
 
 }
