@@ -62,7 +62,7 @@ export class NgxNotifierComponent implements OnDestroy {
    *
    * @param notification notification element
    */
-  private updateNotifications(notification: INotification) {
+  private updateNotifications(notification: INotification): void {
 
     // checks whether the message is alrady present in notifications
     const index = this.notifications.map(function (e) { return e.message; }).indexOf(notification.message);
@@ -108,6 +108,8 @@ export class NgxNotifierComponent implements OnDestroy {
       this.notifications.splice(index, 1);
     }, notification.duration || this.duration);
 
+    return;
+
   }
 
   /**
@@ -116,17 +118,32 @@ export class NgxNotifierComponent implements OnDestroy {
    * @param index position of the element
    */
   removeNotification(index: number): void {
-    this.notifications.splice(index, 1);
+    if (index) {
+      this.notifications.splice(index, 1);
+    }
+    return;
+  }
+
+  /**
+   * click event when toast is cleared
+   *
+   * @param index position of the element
+   */
+  onToastClick(index: number): void {
+    if (this.dismissOnClick) {
+      this.removeNotification(index);
+    }
     return;
   }
 
   /** clear last inserted toast notification */
-  private clearLastToast() {
+  private clearLastToast(): void {
     const index = this.notifications.map(function (e) { return e.id; }).indexOf(this.lastInsertedNotificationId);
 
     if (this.notifications.length !== 0 && index !== -1) {
       this.notifications.splice(index, 1);
     }
+    return;
   }
 
   /** stop subscription when component is destroyed */
