@@ -11,6 +11,8 @@ export class NgxNotifierService {
   notification: Subject<Notification> = new Subject<Notification>();
   /** clear all toast notifications */
   clearToasts: Subject<any> = new Subject<any>();
+  /** clear last toast notification */
+  clearLastToast: Subject<any> = new Subject<any>();
 
   /** pushes a new notification */
   createToast(message: string, style?: string, duration?: number) {
@@ -20,6 +22,11 @@ export class NgxNotifierService {
   /** clear all toast notifications */
   clear() {
     this.clearToasts.next();
+  }
+
+  /** clear last toast notification */
+  clearLast() {
+    this.clearLastToast.next();
   }
 
 }

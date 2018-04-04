@@ -29,6 +29,9 @@ export class NgxNotifierComponent {
   /** array of notifications */
   notifications: INotification[] = [];
 
+  /** id of last inserted message */
+  lastInsertedNotificationId: number;
+
   /**
    * NgxNotifierComponent Constructor
    *
@@ -41,6 +44,10 @@ export class NgxNotifierComponent {
 
     this._ngxNotifierService.clearToasts.subscribe(() => {
       this.notifications = [];
+    });
+
+    this._ngxNotifierService.clearLastToast.subscribe(() => {
+      this.clearLastToast();
     });
   }
 
@@ -60,6 +67,8 @@ export class NgxNotifierComponent {
       }
     }
 
+    // save the last inserted Id
+    this.lastInsertedNotificationId = notification.id;
     // insert notification in the first position of the array
     this.notifications.unshift(notification);
 
@@ -67,7 +76,6 @@ export class NgxNotifierComponent {
     if (this.notifications.length > this.max) {
       this.notifications.pop();
     }
-
 
     // clear notification in given time
     setTimeout(() => {
@@ -84,6 +92,15 @@ export class NgxNotifierComponent {
   removeNotification(index: number): void {
     this.notifications.splice(index, 1);
     return;
+  }
+
+  /** clear last inserted toast notification */
+  private clearLastToast() {
+    const index = this.notifications.map(function (e) { return e.id; }).indexOf(this.lastInsertedNotificationId);
+
+    if (this.notifications.length !== 0 && index !== -1) {
+      this.notifications.shift();
+    }
   }
 
 }

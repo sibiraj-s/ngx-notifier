@@ -44,6 +44,11 @@ export class AppComponent implements OnInit, OnDestroy {
     this._ngxNotifierService.clear();
   }
 
+  /** clear last toast notification */
+  clearLastToast() {
+    this._ngxNotifierService.clearLast();
+  }
+
   ngOnInit() {
     this.getLatestRelease();
   }
