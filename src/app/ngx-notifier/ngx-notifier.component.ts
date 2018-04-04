@@ -23,6 +23,8 @@ export class NgxNotifierComponent {
   @Input() duration = 60000;
   /** click to dismiss a notification */
   @Input() dismissOnClick = false;
+  /** whether to insert on top or at bottom */
+  @Input() insertOnTop = true;
   /** Maximum number of notifications to keep */
   @Input() max = 5;
 
@@ -30,7 +32,7 @@ export class NgxNotifierComponent {
   notifications: INotification[] = [];
 
   /** id of last inserted message */
-  lastInsertedNotificationId: number;
+  lastInsertedNotificationId: string;
 
   /**
    * NgxNotifierComponent Constructor
@@ -70,11 +72,22 @@ export class NgxNotifierComponent {
     // save the last inserted Id
     this.lastInsertedNotificationId = notification.id;
     // insert notification in the first position of the array
-    this.notifications.unshift(notification);
+    if (this.insertOnTop) {
+      this.notifications.unshift(notification);
+    } else {
+      this.notifications.push(notification);
+    }
 
-    // remove the last inserted element if max has reached
+    /**
+     * remove the last inserted element if max has
+     * pop or shift based on `insertOnTop`
+     */
     if (this.notifications.length > this.max) {
-      this.notifications.pop();
+      if (this.insertOnTop) {
+        this.notifications.pop();
+      } else {
+        this.notifications.shift();
+      }
     }
 
     // clear notification in given time
@@ -99,7 +112,7 @@ export class NgxNotifierComponent {
     const index = this.notifications.map(function (e) { return e.id; }).indexOf(this.lastInsertedNotificationId);
 
     if (this.notifications.length !== 0 && index !== -1) {
-      this.notifications.shift();
+      this.notifications.splice(index, 1);
     }
   }
 

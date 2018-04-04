@@ -2,7 +2,7 @@
 export class Notification {
 
     /** unique id for each notification */
-    id: number;
+    id: string;
     /** message to be shown */
     message: string;
     /** bootstrap background colors */
@@ -18,7 +18,7 @@ export class Notification {
      * @param duration timeout for notification
      */
     constructor(message: string, style?: string, duration?: number) {
-        this.id = new Date().getUTCMilliseconds();
+        this.id = '_' + Math.random().toString(36).substr(2, 9); // generate a random number
         this.message = message;
         this.style = style || 'info';
         this.duration = duration;
@@ -28,7 +28,7 @@ export class Notification {
 /** INotification interface */
 export interface INotification {
     /** unique id for each notification */
-    id: number;
+    id: string;
     /** message to be shown */
     message: string;
     /** bootstrap background colors */
