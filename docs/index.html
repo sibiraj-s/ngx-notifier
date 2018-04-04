@@ -81,14 +81,14 @@
                                     <a href="./modules/NgxNotifierModule.html" >NgxNotifierModule</a>
                                         <li class="chapter inner">
                                             <div class="simple menu-toggler" data-toggle="collapse"
-                                                    data-target="#xs-components-links-module-NgxNotifierModule-504bac78-5210-483a-8429-2c8531a79eef"
+                                                    data-target="#xs-components-links-module-NgxNotifierModule-ecde27a7-e22e-45b0-b2b8-af4c6306b40f"
                                                 >
                                                 <span class="fa fa-fw fa-cogs"></span>
                                                 <span>Components</span>
                                                 <span class="fa fa-angle-down"></span>
                                             </div>
                                             <ul class="links collapse"
-                                                    id="xs-components-links-module-NgxNotifierModule-504bac78-5210-483a-8429-2c8531a79eef"
+                                                    id="xs-components-links-module-NgxNotifierModule-ecde27a7-e22e-45b0-b2b8-af4c6306b40f"
                                                 >
                                                     <li class="link">
                                                         <a href="./components/NgxNotifierComponent.html" >NgxNotifierComponent</a>
@@ -97,14 +97,14 @@
                                         </li>
                                         <li class="chapter inner">
                                             <div class="simple menu-toggler" data-toggle="collapse"
-                                                    data-target="#xs-injectables-links-module-NgxNotifierModule-504bac78-5210-483a-8429-2c8531a79eef"
+                                                    data-target="#xs-injectables-links-module-NgxNotifierModule-ecde27a7-e22e-45b0-b2b8-af4c6306b40f"
                                                 >
                                                 <span class="fa fa-fw fa-long-arrow-down"></span>
                                                 <span>Injectables</span>
                                                 <span class="fa fa-angle-down"></span>
                                             </div>
                                             <ul class="links collapse"
-                                                    id="xs-injectables-links-module-NgxNotifierModule-504bac78-5210-483a-8429-2c8531a79eef"
+                                                    id="xs-injectables-links-module-NgxNotifierModule-ecde27a7-e22e-45b0-b2b8-af4c6306b40f"
                                                 >
                                                     <li class="link">
                                                         <a href="./injectables/NgxNotifierService.html" >NgxNotifierService</a>
@@ -261,14 +261,14 @@
                                            <a href="./modules/NgxNotifierModule.html" >NgxNotifierModule</a>
                                                <li class="chapter inner">
                                                    <div class="simple menu-toggler" data-toggle="collapse"
-                                                           data-target="#components-links-module-NgxNotifierModule-504bac78-5210-483a-8429-2c8531a79eef"
+                                                           data-target="#components-links-module-NgxNotifierModule-ecde27a7-e22e-45b0-b2b8-af4c6306b40f"
                    >
                                                        <span class="fa fa-fw fa-cogs"></span>
                                                        <span>Components</span>
                                                        <span class="fa fa-angle-down"></span>
                                                    </div>
                                                    <ul class="links collapse"
-                                                           id="components-links-module-NgxNotifierModule-504bac78-5210-483a-8429-2c8531a79eef"
+                                                           id="components-links-module-NgxNotifierModule-ecde27a7-e22e-45b0-b2b8-af4c6306b40f"
                    >
                                                            <li class="link">
                                                                <a href="./components/NgxNotifierComponent.html" >NgxNotifierComponent</a>
@@ -277,14 +277,14 @@
                                                </li>
                                                <li class="chapter inner">
                                                    <div class="simple menu-toggler" data-toggle="collapse"
-                                                           data-target="#injectables-links-module-NgxNotifierModule-504bac78-5210-483a-8429-2c8531a79eef"
+                                                           data-target="#injectables-links-module-NgxNotifierModule-ecde27a7-e22e-45b0-b2b8-af4c6306b40f"
                    >
                                                        <span class="fa fa-fw fa-long-arrow-down"></span>
                                                        <span>Injectables</span>
                                                        <span class="fa fa-angle-down"></span>
                                                    </div>
                                                    <ul class="links collapse"
-                                                           id="injectables-links-module-NgxNotifierModule-504bac78-5210-483a-8429-2c8531a79eef"
+                                                           id="injectables-links-module-NgxNotifierModule-ecde27a7-e22e-45b0-b2b8-af4c6306b40f"
                    >
                                                            <li class="link">
                                                                <a href="./injectables/NgxNotifierService.html" >NgxNotifierService</a>
@@ -418,8 +418,8 @@ yarn add ngx-notifier</code></pre><h3 id="usage">Usage</h3>
   imports: [ NgxNotifierModule ]
 })</code></pre><p>Import <a href="https://github.com/twbs/bootstrap">bootstrap-4</a> into your application, which is a must</p>
 <p>Then in HTML</p>
-<pre class="line-numbers"><code class="language-html">&lt;app-ngx-notifier&gt;&lt;/app-ngx-notifier&gt;</code></pre><p>To create notification</p>
-<pre class="line-numbers"><code class="language-ts">import { NgxNotifierService } from &#39;./ngx-notifier/services/ngx-notifier.service&#39;;
+<pre class="line-numbers"><code class="language-html">&lt;app-ngx-notifier&gt;&lt;/app-ngx-notifier&gt;</code></pre><p>Then in TS</p>
+<pre class="line-numbers"><code class="language-typescript">import { NgxNotifierService } from &#39;./ngx-notifier/services/ngx-notifier.service&#39;;
 
 &#64;Component({
   selector: &#39;app-root&#39;,
@@ -432,27 +432,32 @@ export class AppComponent {
   constructor(private _ngxNotifierService: NgxNotifierService) { }
 
   createNotification(){
-      this._ngxNotifierService.toast(message:string, style:string, duration: number)
+      this._ngxNotifierService.createToast(message:string, style:string, duration: number);
   }
 
-}</code></pre><ul>
+}</code></pre><h4 id="create-a-toast">Create a toast</h4>
+<pre class="line-numbers"><code class="language-typescript">this._ngxNotifierService.createToast(message:string, style:string, duration: number);</code></pre><ul>
 <li><strong>message</strong> message to be sent as notification</li>
 <li><strong>style</strong> notification style, which can be the following <code>primary|secondary|success|danger|warning|info|light|dark</code>. Default is <code>info</code></li>
 <li><strong>duration</strong> in milliseconds, timeout for the notification</li>
 </ul>
-<h3 id="notifier-component">Notifier Component</h3>
+<h4 id="clear-all-toasts">Clear all toasts</h4>
+<pre class="line-numbers"><code class="language-typescript">this._ngxNotifierService.clear();</code></pre><h4 id="clear-the-last-toast">Clear the last toast</h4>
+<pre class="line-numbers"><code class="language-typescript">this._ngxNotifierService.clearLast();</code></pre><h3 id="notifier-component">Notifier Component</h3>
 <p>Notifier component accepts</p>
 <pre class="line-numbers"><code class="language-html">&lt;app-ngx-notifier [allowDuplicates]=&quot;true&quot;
                   [className]=&quot;myCustomClassName&quot;
                   [duration]=&quot;5000&quot;
                   [dismissOnClick]=&quot;false&quot;
+                  [insertOnTop]=&quot;true&quot;
                   [max]=&quot;5&quot;&gt;
 &lt;/app-ngx-notifier&gt;</code></pre><ul>
-<li><strong>max:</strong> maximum number of notifications to be displayed</li>
 <li><strong>allowDuplicates:</strong> whether to allow duplicate messages in notifications</li>
-<li><strong>dismissOnClick:</strong> dismiss notification on click</li>
 <li><strong>className</strong> custom class for notifications</li>
+<li><strong>dismissOnClick:</strong> dismiss notification on click</li>
 <li><strong>duration</strong> time in milliseconds for dismissing notifications, default is 60s</li>
+<li><strong>insertOnTop</strong> whether to insert notification on top or bottom</li>
+<li><strong>max:</strong> maximum number of notifications to be displayed</li>
 </ul>
 <h3 id="demo">Demo</h3>
 <p>Demo at stackblitz <a href="https://ngx-notifier.stackblitz.io">ngx-notifier</a></p>

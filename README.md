@@ -60,9 +60,9 @@ Then in HTML
 <app-ngx-notifier></app-ngx-notifier>
 ```
 
-To create notification
+Then in TS
 
-```ts
+```typescript
 import { NgxNotifierService } from './ngx-notifier/services/ngx-notifier.service';
 
 @Component({
@@ -76,15 +76,33 @@ export class AppComponent {
   constructor(private _ngxNotifierService: NgxNotifierService) { }
 
   createNotification(){
-      this._ngxNotifierService.toast(message:string, style:string, duration: number)
+      this._ngxNotifierService.createToast(message:string, style:string, duration: number);
   }
 
 }
 ```
 
+#### Create a toast
+
+```typescript
+this._ngxNotifierService.createToast(message:string, style:string, duration: number);
+```
+
 * **message** message to be sent as notification
 * **style** notification style, which can be the following `primary|secondary|success|danger|warning|info|light|dark`. Default is `info`
 * **duration** in milliseconds, timeout for the notification
+
+#### Clear all toasts
+
+```typescript
+this._ngxNotifierService.clear();
+```
+
+#### Clear the last toast
+
+```typescript
+this._ngxNotifierService.clearLast();
+```
 
 ### Notifier Component
 
@@ -95,15 +113,17 @@ Notifier component accepts
                   [className]="myCustomClassName"
                   [duration]="5000"
                   [dismissOnClick]="false"
+                  [insertOnTop]="true"
                   [max]="5">
 </app-ngx-notifier>
 ```
 
-* **max:** maximum number of notifications to be displayed
 * **allowDuplicates:** whether to allow duplicate messages in notifications
-* **dismissOnClick:** dismiss notification on click
 * **className** custom class for notifications
+* **dismissOnClick:** dismiss notification on click
 * **duration** time in milliseconds for dismissing notifications, default is 60s
+* **insertOnTop** whether to insert notification on top or bottom
+* **max:** maximum number of notifications to be displayed
 
 ### Demo
 
