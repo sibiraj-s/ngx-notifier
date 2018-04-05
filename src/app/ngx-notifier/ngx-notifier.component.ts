@@ -6,7 +6,6 @@ import 'rxjs/add/operator/takeUntil';
 import { INotification } from './others/notification-helper';
 
 import { NgxNotifierService } from './services/ngx-notifier.service';
-import { NgxNotifierSubscriberService } from './services/subscriber/ngx-notifier-subscriber.service';
 
 /**
  * Notifier compoent, which holds all the notifications can be accessed via `app-ngx-notifier` selector
@@ -45,16 +44,16 @@ export class NgxNotifierComponent implements OnDestroy {
   /**
    * NgxNotifierComponent Constructor
    *
-   * @param _ngxNotifierSubscriberService subscribe to get values form notifier service
+   * @param _ngxNotifierService subscribe to get values form notifier service
    */
-  constructor(private _ngxNotifierSubscriberService: NgxNotifierSubscriberService, private _domSanitizer: DomSanitizer) {
+  constructor(private _ngxNotifierService: NgxNotifierService, private _domSanitizer: DomSanitizer) {
 
-    this._ngxNotifierSubscriberService.notification.takeUntil(this.componentDestroyed$)
+    this._ngxNotifierService.notification.takeUntil(this.componentDestroyed$)
       .subscribe((notification: INotification) => { this.updateNotifications(notification); });
 
-    this._ngxNotifierSubscriberService.clearToasts.takeUntil(this.componentDestroyed$).subscribe(() => { this.notifications = []; });
+    this._ngxNotifierService.clearToasts.takeUntil(this.componentDestroyed$).subscribe(() => { this.notifications = []; });
 
-    this._ngxNotifierSubscriberService.clearLastToast.takeUntil(this.componentDestroyed$).subscribe(() => { this.clearLastToast(); });
+    this._ngxNotifierService.clearLastToast.takeUntil(this.componentDestroyed$).subscribe(() => { this.clearLastToast(); });
   }
 
   /**

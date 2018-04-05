@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NgxNotifierComponent } from './ngx-notifier.component';
-import { NgxNotifierSubscriberService } from './services/subscriber/ngx-notifier-subscriber.service';
+import { NgxNotifierService } from './services/ngx-notifier.service';
 
 describe('NgxNotifierComponent', () => {
   let component: NgxNotifierComponent;
@@ -10,7 +10,7 @@ describe('NgxNotifierComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [NgxNotifierComponent],
-      providers: [NgxNotifierSubscriberService]
+      providers: [NgxNotifierService]
     })
       .compileComponents();
   }));
