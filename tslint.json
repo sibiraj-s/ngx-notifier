@@ -3,6 +3,10 @@
     "node_modules/codelyzer"
   ],
   "rules": {
+    "angular-whitespace": [
+      true,
+      "check-interpolation"
+    ],
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
