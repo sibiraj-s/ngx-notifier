@@ -114,6 +114,7 @@ Notifier component accepts
                   [allowHTML]="false"
                   [className]="myCustomClassName"
                   [duration]="5000"
+                  [disableAnimations]="false"
                   [dismissOnClick]="false"
                   [insertOnTop]="true"
                   [max]="5">
