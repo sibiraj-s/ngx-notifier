@@ -1,7 +1,7 @@
-<div class="ngx-notifier" *ngIf="notifications?.length !== 0" [ngClass]="className">
+<div class="ngx-notifier" *ngIf="notifications?.length !== 0" [ngClass]="className" [@animateToasts] [@.disabled]="disableAnimations">
   <div [ngClass]="{'pointer': dismissOnClick}">
     <div class="ngx-n-notification alert" role="alert" *ngFor="let notification of notifications; let i = index" [ngClass]="'alert-'+ notification.style"
-      (click)="onToastClick(i)">
+      (click)="onToastClick(i)" [@animateToasts]>
       <button type="button" class="close" aria-label="Close" (click)="removeNotification(i)">
         <span aria-hidden="true">&times;</span>
       </button>

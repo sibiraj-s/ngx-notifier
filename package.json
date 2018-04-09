@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/Sibiraj-S/ngx-notifier",
   "peerDependencies": {
+    "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
     "@angular/core": "^5.2.0",
     "@angular/platform-browser": "^5.2.0",

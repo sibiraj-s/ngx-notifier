@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgxNotifierComponent } from './ngx-notifier.component';
 import { NgxNotifierService } from './services/ngx-notifier.service';
@@ -9,6 +10,7 @@ describe('NgxNotifierComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [BrowserAnimationsModule],
       declarations: [NgxNotifierComponent],
       providers: [NgxNotifierService]
     })

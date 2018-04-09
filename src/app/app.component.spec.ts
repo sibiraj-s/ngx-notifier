@@ -1,5 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
@@ -12,7 +13,7 @@ describe('AppComponent', () => {
         AppComponent
       ],
       providers: [AppService],
-      imports: [HttpClientModule, NgxNotifierModule]
+      imports: [HttpClientModule, BrowserAnimationsModule, NgxNotifierModule]
     }).compileComponents();
   }));
 

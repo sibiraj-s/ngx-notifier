@@ -42,13 +42,14 @@ yarn add ngx-notifier
 
 ### Usage
 
-Import `ngx-notifier` module
+Import `NgxNotifierModule` and `BrowserAnimationsModule`
 
 ```typescript
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxNotifierModule } from 'ngx-notifier';
 
 @NgModule({
-  imports: [ NgxNotifierModule ]
+  imports: [ BrowserAnimationsModule, NgxNotifierModule ]
 })
 ```
 
@@ -122,6 +123,7 @@ Notifier component accepts
 * **allowDuplicates:** whether to allow duplicate messages in notifications
 * **allowHTML** whether to allow or display HTML as it is, HTML will be sanitized and any JS will be maked as unsafe.
 * **className** custom class for notifications
+* **disableAnimations** whether to enable or disable animations for the toast.
 * **dismissOnClick:** dismiss notification on click
 * **duration** time in milliseconds for dismissing notifications, default is 60s
 * **insertOnTop** whether to insert notification on top or bottom

@@ -1,5 +1,6 @@
 import { Component, Input, OnDestroy, SecurityContext } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { trigger, style, transition, animate, state } from '@angular/animations';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
 
@@ -13,7 +14,15 @@ import { NgxNotifierService } from './services/ngx-notifier.service';
 @Component({
   selector: 'app-ngx-notifier',
   templateUrl: './ngx-notifier.component.html',
-  styleUrls: ['./ngx-notifier.component.scss']
+  styleUrls: ['./ngx-notifier.component.scss'],
+  animations: [
+    trigger('animateToasts', [
+      state('void', style({ opacity: 0 })),
+      transition(':enter, :leave', [ // void <=> *
+        animate('0.3s ease')
+      ])
+    ])
+  ]
 })
 
 export class NgxNotifierComponent implements OnDestroy {
@@ -28,6 +37,8 @@ export class NgxNotifierComponent implements OnDestroy {
   @Input() className: string;
   /** default duration for dismissing notifications (60s/1minute) */
   @Input() duration = 60000;
+  /** weather to enable or disable animations */
+  @Input() disableAnimations = false;
   /** click to dismiss a notification */
   @Input() dismissOnClick = false;
   /** whether to insert on top or at bottom */
