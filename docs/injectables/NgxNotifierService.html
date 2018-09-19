@@ -8,375 +8,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	    <link rel="stylesheet" href="../styles/style.css">
+	      <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">NgxNotifier</a>
-            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-            <div id="book-search-input" role="search">
-                <input type="text" placeholder="Type to search">
-            </div>
-            <nav>
-            
-                <ul class="list">
-            
-                    <li class="title">
-                        <a href="../index.html">NgxNotifier</a>
-                    </li>
-            
-                    <li class="divider"></li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
-                        <ul class="links">
-                                <li class="link">
-                                    <a 
-                                        
-                                         href="../overview.html" 
-                                         href="../overview.html" 
-                                        >
-                                        <span class="fa fa-fw fa-th"></span>Overview
-                                    </a>
-                                </li>
-                                <li class="link">
-                                  <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                </li>
-                                <li class="link">
-                                        <a href="../license.html"
-                                    >
-                                        <span class="fa fa-fw fa-file-text-o"></span>LICENSE
-                                    </a>
-                                </li>
-                                <li class="link">
-                                    <a href="../dependencies.html"
-                                        
-                                        >
-                                        <span class="fa fa-fw fa-list"></span>Dependencies
-                                    </a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter modules">
-                        <a data-type="chapter-link" href="../modules.html" >
-                            <div class="menu-toggler linked" data-toggle="collapse"
-                                    data-target="#xs-modules-links"
-                            >
-                                <span class="fa fa-fw fa-archive"></span>
-                                <span class="link-name">Modules</span>
-                                <span class="fa fa-angle-down"></span>
-                            </div>
-                        </a>
-                        <ul class="links collapse "
-                                id="xs-modules-links"
-                            >
-                                <li class="link">
-                                    <a href="../modules/NgxNotifierModule.html" >NgxNotifierModule</a>
-                                        <li class="chapter inner">
-                                            <div class="simple menu-toggler" data-toggle="collapse"
-                                                    data-target="#xs-components-links-module-NgxNotifierModule-218bf5e1-f4ca-4ff9-bc61-ec8891d18e3e"
-                                                >
-                                                <span class="fa fa-fw fa-cogs"></span>
-                                                <span>Components</span>
-                                                <span class="fa fa-angle-down"></span>
-                                            </div>
-                                            <ul class="links collapse"
-                                                    id="xs-components-links-module-NgxNotifierModule-218bf5e1-f4ca-4ff9-bc61-ec8891d18e3e"
-                                                >
-                                                    <li class="link">
-                                                        <a href="../components/NgxNotifierComponent.html" >NgxNotifierComponent</a>
-                                                    </li>
-                                            </ul>
-                                        </li>
-                                        <li class="chapter inner">
-                                            <div class="simple menu-toggler" data-toggle="collapse"
-                                                    data-target="#xs-injectables-links-module-NgxNotifierModule-218bf5e1-f4ca-4ff9-bc61-ec8891d18e3e"
-                                                >
-                                                <span class="fa fa-fw fa-long-arrow-down"></span>
-                                                <span>Injectables</span>
-                                                <span class="fa fa-angle-down"></span>
-                                            </div>
-                                            <ul class="links collapse"
-                                                    id="xs-injectables-links-module-NgxNotifierModule-218bf5e1-f4ca-4ff9-bc61-ec8891d18e3e"
-                                                >
-                                                    <li class="link">
-                                                        <a href="../injectables/NgxNotifierService.html"  data-type="entity-link" data-context="sub-entity" data-context-id="modules" class="active" >NgxNotifierService</a>
-                                                    </li>
-                                            </ul>
-                                        </li>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-classes-links"
-                            >
-                            <span class="fa fa-fw fa-file-code-o"></span>
-                            <span>Classes</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-classes-links"
-                            >
-                                <li class="link">
-                                    <a href="../classes/Notification.html" >Notification</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                            <li class="chapter">
-                                <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-injectables-links"
-                                    >
-                                    <span class="fa fa-fw fa-long-arrow-down"></span>
-                                    <span>Injectables</span>
-                                    <span class="fa fa-angle-down"></span>
-                                </div>
-                                <ul class="links collapse "
-                                        id="xs-injectables-links"
-                                    >
-                                        <li class="link">
-                                            <a href="../injectables/NgxNotifierService.html"  data-type="entity-link" class="active" >NgxNotifierService</a>
-                                        </li>
-                                </ul>
-                            </li>
-            
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-interfaces-links"
-                            >
-                            <span class="fa fa-fw fa-info"></span>
-                            <span>Interfaces</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-interfaces-links"
-                            >
-                                <li class="link">
-                                    <a href="../interfaces/INotification.html" >INotification</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-miscellaneous-links"
-                            >
-                            <span class="fa fa-fw fa-cubes"></span>
-                            <span>Miscellaneous</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-miscellaneous-links"
-                            >
-                                <li class="link">
-                                  <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-            
-            
-                </ul>
-            
-            </nav>
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <nav>
-                   
-                       <ul class="list">
-                   
-                           <li class="title">
-                               <a href="../index.html">NgxNotifier</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                   
-                               <div id="book-search-input" role="search">
-                                   <input type="text" placeholder="Type to search">
-                               </div>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
-                               <ul class="links">
-                                       <li class="link">
-                                           <a 
-                                               
-                                                href="../overview.html" 
-                                                href="../overview.html" 
-                                               >
-                                               <span class="fa fa-fw fa-th"></span>Overview
-                                           </a>
-                                       </li>
-                                       <li class="link">
-                                         <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                       </li>
-                                       <li class="link">
-                                               <a href="../license.html"
-                                           >
-                                               <span class="fa fa-fw fa-file-text-o"></span>LICENSE
-                                           </a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../dependencies.html"
-                                               
-                                               >
-                                               <span class="fa fa-fw fa-list"></span>Dependencies
-                                           </a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter modules">
-                               <a data-type="chapter-link" href="../modules.html" >
-                                   <div class="menu-toggler linked" data-toggle="collapse"
-                                           data-target="#modules-links"
-                                   >
-                                       <span class="fa fa-fw fa-archive"></span>
-                                       <span class="link-name">Modules</span>
-                                       <span class="fa fa-angle-down"></span>
-                                   </div>
-                               </a>
-                               <ul class="links collapse "
-                                       id="modules-links"
-                   >
-                                       <li class="link">
-                                           <a href="../modules/NgxNotifierModule.html" >NgxNotifierModule</a>
-                                               <li class="chapter inner">
-                                                   <div class="simple menu-toggler" data-toggle="collapse"
-                                                           data-target="#components-links-module-NgxNotifierModule-218bf5e1-f4ca-4ff9-bc61-ec8891d18e3e"
-                   >
-                                                       <span class="fa fa-fw fa-cogs"></span>
-                                                       <span>Components</span>
-                                                       <span class="fa fa-angle-down"></span>
-                                                   </div>
-                                                   <ul class="links collapse"
-                                                           id="components-links-module-NgxNotifierModule-218bf5e1-f4ca-4ff9-bc61-ec8891d18e3e"
-                   >
-                                                           <li class="link">
-                                                               <a href="../components/NgxNotifierComponent.html" >NgxNotifierComponent</a>
-                                                           </li>
-                                                   </ul>
-                                               </li>
-                                               <li class="chapter inner">
-                                                   <div class="simple menu-toggler" data-toggle="collapse"
-                                                           data-target="#injectables-links-module-NgxNotifierModule-218bf5e1-f4ca-4ff9-bc61-ec8891d18e3e"
-                   >
-                                                       <span class="fa fa-fw fa-long-arrow-down"></span>
-                                                       <span>Injectables</span>
-                                                       <span class="fa fa-angle-down"></span>
-                                                   </div>
-                                                   <ul class="links collapse"
-                                                           id="injectables-links-module-NgxNotifierModule-218bf5e1-f4ca-4ff9-bc61-ec8891d18e3e"
-                   >
-                                                           <li class="link">
-                                                               <a href="../injectables/NgxNotifierService.html"  data-type="entity-link" data-context="sub-entity" data-context-id="modules" class="active" >NgxNotifierService</a>
-                                                           </li>
-                                                   </ul>
-                                               </li>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#classes-links"
-                   >
-                                   <span class="fa fa-fw fa-file-code-o"></span>
-                                   <span>Classes</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="classes-links"
-                   >
-                                       <li class="link">
-                                           <a href="../classes/Notification.html" >Notification</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                                   <li class="chapter">
-                                       <div class="simple menu-toggler" data-toggle="collapse"
-                                               data-target="#injectables-links"
-                   >
-                                           <span class="fa fa-fw fa-long-arrow-down"></span>
-                                           <span>Injectables</span>
-                                           <span class="fa fa-angle-down"></span>
-                                       </div>
-                                       <ul class="links collapse "
-                                               id="injectables-links"
-                   >
-                                               <li class="link">
-                                                   <a href="../injectables/NgxNotifierService.html"  data-type="entity-link" class="active" >NgxNotifierService</a>
-                                               </li>
-                                       </ul>
-                                   </li>
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#interfaces-links"
-                   >
-                                   <span class="fa fa-fw fa-info"></span>
-                                   <span>Interfaces</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="interfaces-links"
-                   >
-                                       <li class="link">
-                                           <a href="../interfaces/INotification.html" >INotification</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#miscellaneous-links"
-                   >
-                                   <span class="fa fa-fw fa-cubes"></span>
-                                   <span>Miscellaneous</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="miscellaneous-links"
-                   >
-                                       <li class="link">
-                                         <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                   
-                   
-                       </ul>
-                   
-                   </nav>
+                   <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
                <div class="content injectable">
                    <div class="content-data">
+
 
 
 
@@ -389,14 +45,12 @@
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="active">
-        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
-    </li>
-
-
-    <li>
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-    </li>
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
 </ul>
 
 <div class="tab-content">
@@ -418,384 +72,390 @@
 
 
             <section>
-                <h3 id="index">Index</h3>
-                <table class="table table-sm table-bordered index-table">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <h6><b>Properties</b></h6>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <ul class="index-list">
-                                    <li>
-                                        <a href="#clearLastToast">clearLastToast</a>
-                                    </li>
-                                    <li>
-                                        <a href="#clearToasts">clearToasts</a>
-                                    </li>
-                                    <li>
-                                        <a href="#notification">notification</a>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <h6><b>Methods</b></h6>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <ul class="index-list">
-                                    <li>
-                                        <a href="#clear">clear</a>
-                                    </li>
-                                    <li>
-                                        <a href="#clearLast">clearLast</a>
-                                    </li>
-                                    <li>
-                                        <a href="#createToast">createToast</a>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#clearLastToast">clearLastToast</a>
+                            </li>
+                            <li>
+                                <a href="#clearToasts">clearToasts</a>
+                            </li>
+                            <li>
+                                <a href="#notification">notification</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#clear">clear</a>
+                            </li>
+                            <li>
+                                <a href="#clearLast">clearLast</a>
+                            </li>
+                            <li>
+                                <a href="#createToast">createToast</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
 
 
             <section>
-                
-                    <h3 id="methods">
-                        Methods
-                    </h3>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="clear"></a>
-                                    <span class="name">
-                                        <b>
-                                        clear
-                                        </b>
-                                        <a href="#clear"><span class="fa fa-link"></span></a>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>clear()</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/ngx-notifier/services/ngx-notifier.service.ts:23</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                        <div class="io-description"><p>clear all toast notifications </p>
-            </div>
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="clearLast"></a>
-                                    <span class="name">
-                                        <b>
-                                        clearLast
-                                        </b>
-                                        <a href="#clearLast"><span class="fa fa-link"></span></a>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>clearLast()</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/ngx-notifier/services/ngx-notifier.service.ts:28</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                        <div class="io-description"><p>clear last toast notification </p>
-            </div>
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="createToast"></a>
-                                    <span class="name">
-                                        <b>
-                                        createToast
-                                        </b>
-                                        <a href="#createToast"><span class="fa fa-link"></span></a>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>createToast(message: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, style?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, duration?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/ngx-notifier/services/ngx-notifier.service.ts:18</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                        <div class="io-description"><p>pushes a new notification </p>
-            </div>
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                                <td>Type</td>
-                                                            <td>Optional</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                                <td>message</td>
-                                                                
-                                                                    <td>
-                                                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                                    </td>
-                                                                
-                                                                <td>
-                                                                        no
-                                                                </td>
-                                                                
-            
-                                                            </tr>
-                                                            <tr>
-                                                                <td>style</td>
-                                                                
-                                                                    <td>
-                                                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                                    </td>
-                                                                
-                                                                <td>
-                                                                        yes
-                                                                </td>
-                                                                
-            
-                                                            </tr>
-                                                            <tr>
-                                                                <td>duration</td>
-                                                                
-                                                                    <td>
-                                                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                                    </td>
-                                                                
-                                                                <td>
-                                                                        yes
-                                                                </td>
-                                                                
-            
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-            </section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="clear"></a>
+                        <span class="name">
+                            <b>
+                            clear
+                            </b>
+                            <a href="#clear"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>clear()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/ngx-notifier/services/ngx-notifier.service.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>clear all toast notifications </p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="clearLast"></a>
+                        <span class="name">
+                            <b>
+                            clearLast
+                            </b>
+                            <a href="#clearLast"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>clearLast()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/ngx-notifier/services/ngx-notifier.service.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>clear last toast notification </p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createToast"></a>
+                        <span class="name">
+                            <b>
+                            createToast
+                            </b>
+                            <a href="#createToast"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>createToast(message: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, style?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, duration?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/ngx-notifier/services/ngx-notifier.service.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>pushes a new notification </p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>message</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>style</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>duration</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
             <section>
-                
-                    <h3 id="inputs">
-                        Properties
-                    </h3>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="clearLastToast"></a>
-                                    <span class="name">
-                                        <b>
-                                        clearLastToast
-                                        </b>
-                                        <a href="#clearLastToast"><span class="fa fa-link"></span></a>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <code>clearLastToast:     <code>Subject&lt;any&gt;</code>
-            </code>
-                                </td>
-                            </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Type : </i>    <code>Subject&lt;any&gt;</code>
-            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Default value : </i><code>new Subject&lt;any&gt;()</code>
-                                    </td>
-                                </tr>
-                                    <tr>
-                                        <td class="col-md-4">
-                                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/ngx-notifier/services/ngx-notifier.service.ts:15</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>clear last toast notification </p>
-            </div>
-                                </td>
-                            </tr>
-            
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="clearToasts"></a>
-                                    <span class="name">
-                                        <b>
-                                        clearToasts
-                                        </b>
-                                        <a href="#clearToasts"><span class="fa fa-link"></span></a>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <code>clearToasts:     <code>Subject&lt;any&gt;</code>
-            </code>
-                                </td>
-                            </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Type : </i>    <code>Subject&lt;any&gt;</code>
-            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Default value : </i><code>new Subject&lt;any&gt;()</code>
-                                    </td>
-                                </tr>
-                                    <tr>
-                                        <td class="col-md-4">
-                                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/ngx-notifier/services/ngx-notifier.service.ts:13</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>clear all toast notifications </p>
-            </div>
-                                </td>
-                            </tr>
-            
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="notification"></a>
-                                    <span class="name">
-                                        <b>
-                                        notification
-                                        </b>
-                                        <a href="#notification"><span class="fa fa-link"></span></a>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <code>notification:     <code><a href="../classes/Notification.html" target="_self" >Subject&lt;Notification&gt;</a></code>
-            </code>
-                                </td>
-                            </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Type : </i>    <code><a href="../classes/Notification.html" target="_self" >Subject&lt;Notification&gt;</a></code>
-            
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Default value : </i><code>new Subject&lt;Notification&gt;()</code>
-                                    </td>
-                                </tr>
-                                    <tr>
-                                        <td class="col-md-4">
-                                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/ngx-notifier/services/ngx-notifier.service.ts:11</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>notification which can be subscribed on new messages </p>
-            </div>
-                                </td>
-                            </tr>
-            
-                        </tbody>
-                    </table>
-            </section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="clearLastToast"></a>
+                        <span class="name">
+                            <b>
+                            clearLastToast
+                            </b>
+                            <a href="#clearLastToast"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>clearLastToast:     <code>Subject&lt;any&gt;</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subject&lt;any&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subject&lt;any&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/ngx-notifier/services/ngx-notifier.service.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>clear last toast notification </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="clearToasts"></a>
+                        <span class="name">
+                            <b>
+                            clearToasts
+                            </b>
+                            <a href="#clearToasts"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>clearToasts:     <code>Subject&lt;any&gt;</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subject&lt;any&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subject&lt;any&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/ngx-notifier/services/ngx-notifier.service.ts:13</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>clear all toast notifications </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="notification"></a>
+                        <span class="name">
+                            <b>
+                            notification
+                            </b>
+                            <a href="#notification"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>notification:     <code><a href="../classes/Notification.html" target="_self" >Subject&lt;Notification&gt;</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/Notification.html" target="_self" >Subject&lt;Notification&gt;</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subject&lt;Notification&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/ngx-notifier/services/ngx-notifier.service.ts:11</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>notification which can be subscribed on new messages </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
 
     </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { Subject } from &#x27;rxjs/Subject&#x27;;
+import { Subject } from &#x27;rxjs&#x27;;
 
 import { Notification } from &#x27;../others/notification-helper&#x27;;
 
@@ -839,9 +499,11 @@ export class NgxNotifierService {
 
 
 
+
+
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -853,6 +515,16 @@ export class NgxNotifierService {
            </div>
        </div>
 
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'NgxNotifierService.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
        <script src="../js/libs/bootstrap-native.js"></script>
 
        <script src="../js/libs/es6-shim.min.js"></script>
@@ -862,17 +534,16 @@ export class NgxNotifierService {
 
        <script src="../js/compodoc.js"></script>
 
-       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 1;</script>
-
-       <script src="../js/search/search.js"></script>
-       <script src="../js/search/lunr.min.js"></script>
-       <script src="../js/search/search-lunr.js"></script>
-
        <script src="../js/tabs.js"></script>
        <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
        <script src="../js/libs/prism.js"></script>
        <script src="../js/sourceCode.js"></script>
-       <script src="../js/search/search_index.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
 
 
     </body>

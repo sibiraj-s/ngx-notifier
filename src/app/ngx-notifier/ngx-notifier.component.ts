@@ -1,8 +1,8 @@
 import { Component, Input, OnDestroy, SecurityContext } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { trigger, style, transition, animate, state } from '@angular/animations';
-import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/takeUntil';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { INotification } from './others/notification-helper';
 
@@ -59,12 +59,17 @@ export class NgxNotifierComponent implements OnDestroy {
    */
   constructor(private _ngxNotifierService: NgxNotifierService, private _domSanitizer: DomSanitizer) {
 
-    this._ngxNotifierService.notification.takeUntil(this.componentDestroyed$)
-      .subscribe((notification: INotification) => { this.updateNotifications(notification); });
+    this._ngxNotifierService.notification.pipe(
+      takeUntil(this.componentDestroyed$)
+    ).subscribe((notification: INotification) => { this.updateNotifications(notification); });
 
-    this._ngxNotifierService.clearToasts.takeUntil(this.componentDestroyed$).subscribe(() => { this.notifications = []; });
+    this._ngxNotifierService.clearToasts.pipe(
+      takeUntil(this.componentDestroyed$)
+    ).subscribe(() => { this.notifications = []; });
 
-    this._ngxNotifierService.clearLastToast.takeUntil(this.componentDestroyed$).subscribe(() => { this.clearLastToast(); });
+    this._ngxNotifierService.clearLastToast.pipe(
+      takeUntil(this.componentDestroyed$)
+    ).subscribe(() => { this.clearLastToast(); });
   }
 
   /**

@@ -1,37 +1,21 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import { Component } from '@angular/core';
 
 import { NgxNotifierService } from './ngx-notifier/services/ngx-notifier.service';
-import { AppService } from './app.service';
 import { jsonArray } from './data';
 
 /** App Component is the root component of the application */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [AppService]
+  styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent {
 
   title = 'A Simple Notification Service for Angular 5+ Applications.';
   jsonArray = jsonArray;
-  latestRelease: any = [];
-  private subscription: Subject<any> = new Subject();
 
-  constructor(private _appService: AppService,
-    private _ngxNotifierService: NgxNotifierService) { }
-
-  private getLatestRelease() {
-    this.subscription = this._appService.getLatestRelease().subscribe(
-      data => this.latestRelease = data,
-      error => { console.log(error); },
-      () => {
-        console.log('latest release: ' + this.latestRelease['name']);
-        this.subscription.unsubscribe();
-      });
-  }
+  constructor(private _ngxNotifierService: NgxNotifierService) { }
 
   /** crates a toast message */
   createToast(style: string): void {
@@ -48,14 +32,5 @@ export class AppComponent implements OnInit, OnDestroy {
   clearLastToast() {
     this._ngxNotifierService.clearLast();
   }
-
-  ngOnInit() {
-    this.getLatestRelease();
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
-
 
 }

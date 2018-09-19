@@ -5,7 +5,7 @@
    <img src="https://raw.githubusercontent.com/Sibiraj-S/ngx-notifier/master/src/assets/angular.png" alt="angular" width="350">
   </a>
 </p>
-<p align="center">A Simple Notification Service for Angular 5+ Application</p>
+<p align="center">A Simple Notification Service for Angular Applications</p>
 <p align="center">
   <a href="https://travis-ci.org/Sibiraj-S/ngx-notifier">
     <img alt="Build Status" src="https://travis-ci.org/Sibiraj-S/ngx-notifier.svg?branch=master">
@@ -23,7 +23,7 @@
 
 ## Getting Started
 
-ngx-notifier is a simple notification service for Angular 5+ applications and is meant to be simple with limited features. Applications using bootstrap4 can make use of it to make simple toast notifications.
+ngx-notifier is a simple notification service for Angular applications and is meant to be simple with limited features. Applications using bootstrap4 can make use of it to make simple toast notifications.
 
 If you are looking for angularjs(1.x) version, Try [angularjs-toast][angularjs-toast]
 
