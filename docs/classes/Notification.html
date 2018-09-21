@@ -384,40 +384,40 @@
 /** Notification Class */
 export class Notification {
 
-    /** unique id for each notification */
-    id: string;
-    /** message to be shown */
-    message: string;
-    /** bootstrap background colors */
-    style: string;
-    /** timeout for notification */
-    duration: number;
+  /** unique id for each notification */
+  id: string;
+  /** message to be shown */
+  message: string;
+  /** bootstrap background colors */
+  style: string;
+  /** timeout for notification */
+  duration: number;
 
-    /**
-     * Constructor For Notification
-     *
-     * @param message message to be shown
-     * @param style bootstrap background colors
-     * @param duration timeout for notification
-     */
-    constructor(message: string, style?: string, duration?: number) {
-        this.id &#x3D; &#x27;_&#x27; + Math.random().toString(36).substr(2, 9); // generate a random number
-        this.message &#x3D; message;
-        this.style &#x3D; style || &#x27;info&#x27;;
-        this.duration &#x3D; duration;
-    }
+  /**
+   * Constructor For Notification
+   *
+   * @param message message to be shown
+   * @param style bootstrap background colors
+   * @param duration timeout for notification
+   */
+  constructor(message: string, style?: string, duration?: number) {
+    this.id &#x3D; &#x27;_&#x27; + Math.random().toString(36).substr(2, 9); // generate a random number
+    this.message &#x3D; message;
+    this.style &#x3D; style || &#x27;info&#x27;;
+    this.duration &#x3D; duration;
+  }
 }
 
 /** INotification interface */
 export interface INotification {
-    /** unique id for each notification */
-    id: string;
-    /** message to be shown */
-    message: string | SafeHtml;
-    /** bootstrap background colors */
-    style?: string;
-    /** timeout for notification */
-    duration?: number;
+  /** unique id for each notification */
+  id: string;
+  /** message to be shown */
+  message: string | SafeHtml;
+  /** bootstrap background colors */
+  style?: string;
+  /** timeout for notification */
+  duration?: number;
 }
 </code></pre>
     </div>

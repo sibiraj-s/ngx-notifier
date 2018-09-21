@@ -81,6 +81,10 @@
         <tbody>
 
 
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
 
 
 
@@ -439,7 +443,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>&#x27;A Simple Notification Service for Angular 5+ Applications.&#x27;</code>
+                            <i>Default value : </i><code>&#x27;A Simple Notification Service for Angular Applications.&#x27;</code>
                         </td>
                     </tr>
                         <tr>
@@ -457,7 +461,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ViewEncapsulation } from &#x27;@angular/core&#x27;;
 
 import { NgxNotifierService } from &#x27;./ngx-notifier/services/ngx-notifier.service&#x27;;
 import { jsonArray } from &#x27;./data&#x27;;
@@ -466,12 +470,12 @@ import { jsonArray } from &#x27;./data&#x27;;
 @Component({
   selector: &#x27;app-root&#x27;,
   templateUrl: &#x27;./app.component.html&#x27;,
-  styleUrls: [&#x27;./app.component.scss&#x27;]
+  styleUrls: [&#x27;./app.component.scss&#x27;],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent {
-
-  title &#x3D; &#x27;A Simple Notification Service for Angular 5+ Applications.&#x27;;
+  title &#x3D; &#x27;A Simple Notification Service for Angular Applications.&#x27;;
   jsonArray &#x3D; jsonArray;
 
   constructor(private _ngxNotifierService: NgxNotifierService) { }
@@ -491,33 +495,34 @@ export class AppComponent {
   clearLastToast() {
     this._ngxNotifierService.clearLast();
   }
-
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;home-page&quot;&gt;
-    &lt;div class&#x3D;&quot;m-ctnt&quot;&gt;
-        &lt;img src&#x3D;&quot;/assets/angular.svg&quot; alt&#x3D;&quot;angular&quot;&gt;
-        &lt;h6&gt;{{ title }}&lt;/h6&gt;
-        &lt;div class&#x3D;&quot;buttons&quot;&gt;
-            &lt;a class&#x3D;&quot;github-button&quot; href&#x3D;&quot;https://github.com/Sibiraj-S&quot; aria-label&#x3D;&quot;Follow @Sibiraj-S on GitHub&quot;&gt;Follow @Sibiraj-S&lt;/a&gt;
-            &lt;a class&#x3D;&quot;github-button&quot; href&#x3D;&quot;https://github.com/Sibiraj-S/ngx-notifier/fork&quot; aria-label&#x3D;&quot;Fork Sibiraj-S/ngx-notifier on GitHub&quot;&gt;Fork&lt;/a&gt;
-            &lt;a class&#x3D;&quot;github-button&quot; href&#x3D;&quot;https://github.com/Sibiraj-S/ngx-notifier&quot; aria-label&#x3D;&quot;Star Sibiraj-S/ngx-notifier on GitHub&quot;&gt;Star&lt;/a&gt;
-            &lt;a class&#x3D;&quot;github-button&quot; href&#x3D;&quot;https://github.com/Sibiraj-S/ngx-notifier/issues&quot; data-show-count&#x3D;&quot;true&quot; aria-label&#x3D;&quot;Issue Sibiraj-S/ngx-notifier on GitHub&quot;&gt;Issue&lt;/a&gt;
-            &lt;a class&#x3D;&quot;github-button&quot; href&#x3D;&quot;https://github.com/Sibiraj-S/ngx-notifier/archive/master.zip&quot; aria-label&#x3D;&quot;Download Sibiraj-S/ngx-notifier on GitHub&quot;&gt;Download&lt;/a&gt;
-        &lt;/div&gt;
-        &lt;br /&gt;
-        &lt;div class&#x3D;&quot;notifiers&quot;&gt;
-            &lt;button class&#x3D;&quot;btn btn-sm btn-info&quot; (click)&#x3D;&quot;createToast(&#x27;info&#x27;)&quot;&gt;Info&lt;/button&gt;
-            &lt;button class&#x3D;&quot;btn btn-sm btn-warning&quot; (click)&#x3D;&quot;createToast(&#x27;warning&#x27;)&quot;&gt;Warning&lt;/button&gt;
-            &lt;button class&#x3D;&quot;btn btn-sm btn-danger&quot; (click)&#x3D;&quot;createToast(&#x27;danger&#x27;)&quot;&gt;Danger&lt;/button&gt;
-            &lt;button class&#x3D;&quot;btn btn-sm btn-success&quot; (click)&#x3D;&quot;createToast(&#x27;success&#x27;)&quot;&gt;Success&lt;/button&gt;
-            &lt;button class&#x3D;&quot;btn btn-sm btn-primary&quot; (click)&#x3D;&quot;clearToasts()&quot;&gt;Clear All Toasts&lt;/button&gt;
-            &lt;button class&#x3D;&quot;btn btn-sm btn-secondary&quot; (click)&#x3D;&quot;clearLastToast()&quot;&gt;Clear Last Toast&lt;/button&gt;
-        &lt;/div&gt;
+  &lt;div class&#x3D;&quot;m-ctnt&quot;&gt;
+    &lt;img src&#x3D;&quot;/assets/angular.svg&quot; alt&#x3D;&quot;angular&quot;&gt;
+    &lt;h6&gt;{{ title }}&lt;/h6&gt;
+    &lt;div class&#x3D;&quot;buttons&quot;&gt;
+      &lt;a class&#x3D;&quot;github-button&quot; href&#x3D;&quot;https://github.com/Sibiraj-S&quot; aria-label&#x3D;&quot;Follow @Sibiraj-S on GitHub&quot;&gt;Follow
+        @Sibiraj-S&lt;/a&gt;
+      &lt;a class&#x3D;&quot;github-button&quot; href&#x3D;&quot;https://github.com/Sibiraj-S/ngx-notifier/fork&quot; aria-label&#x3D;&quot;Fork Sibiraj-S/ngx-notifier on GitHub&quot;&gt;Fork&lt;/a&gt;
+      &lt;a class&#x3D;&quot;github-button&quot; href&#x3D;&quot;https://github.com/Sibiraj-S/ngx-notifier&quot; aria-label&#x3D;&quot;Star Sibiraj-S/ngx-notifier on GitHub&quot;&gt;Star&lt;/a&gt;
+      &lt;a class&#x3D;&quot;github-button&quot; href&#x3D;&quot;https://github.com/Sibiraj-S/ngx-notifier/issues&quot; data-show-count&#x3D;&quot;true&quot;
+        aria-label&#x3D;&quot;Issue Sibiraj-S/ngx-notifier on GitHub&quot;&gt;Issue&lt;/a&gt;
+      &lt;a class&#x3D;&quot;github-button&quot; href&#x3D;&quot;https://github.com/Sibiraj-S/ngx-notifier/archive/master.zip&quot; aria-label&#x3D;&quot;Download Sibiraj-S/ngx-notifier on GitHub&quot;&gt;Download&lt;/a&gt;
     &lt;/div&gt;
+    &lt;br /&gt;
+    &lt;div class&#x3D;&quot;notifiers&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn-sm btn-info&quot; (click)&#x3D;&quot;createToast(&#x27;info&#x27;)&quot;&gt;Info&lt;/button&gt;
+      &lt;button class&#x3D;&quot;btn btn-sm btn-warning&quot; (click)&#x3D;&quot;createToast(&#x27;warning&#x27;)&quot;&gt;Warning&lt;/button&gt;
+      &lt;button class&#x3D;&quot;btn btn-sm btn-danger&quot; (click)&#x3D;&quot;createToast(&#x27;danger&#x27;)&quot;&gt;Danger&lt;/button&gt;
+      &lt;button class&#x3D;&quot;btn btn-sm btn-success&quot; (click)&#x3D;&quot;createToast(&#x27;success&#x27;)&quot;&gt;Success&lt;/button&gt;
+      &lt;button class&#x3D;&quot;btn btn-sm btn-primary&quot; (click)&#x3D;&quot;clearToasts()&quot;&gt;Clear All Toasts&lt;/button&gt;
+      &lt;button class&#x3D;&quot;btn btn-sm btn-secondary&quot; (click)&#x3D;&quot;clearLastToast()&quot;&gt;Clear Last Toast&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 &lt;app-ngx-notifier&gt;&lt;/app-ngx-notifier&gt;
 </code></pre>
@@ -548,7 +553,7 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="home-page">    <div class="m-ctnt">        <img src="/assets/angular.svg" alt="angular">        <h6>{{ title }}</h6>        <div class="buttons">            <a class="github-button" href="https://github.com/Sibiraj-S" aria-label="Follow @Sibiraj-S on GitHub">Follow @Sibiraj-S</a>            <a class="github-button" href="https://github.com/Sibiraj-S/ngx-notifier/fork" aria-label="Fork Sibiraj-S/ngx-notifier on GitHub">Fork</a>            <a class="github-button" href="https://github.com/Sibiraj-S/ngx-notifier" aria-label="Star Sibiraj-S/ngx-notifier on GitHub">Star</a>            <a class="github-button" href="https://github.com/Sibiraj-S/ngx-notifier/issues" data-show-count="true" aria-label="Issue Sibiraj-S/ngx-notifier on GitHub">Issue</a>            <a class="github-button" href="https://github.com/Sibiraj-S/ngx-notifier/archive/master.zip" aria-label="Download Sibiraj-S/ngx-notifier on GitHub">Download</a>        </div>        <br />        <div class="notifiers">            <button class="btn btn-sm btn-info" (click)="createToast(\'info\')">Info</button>            <button class="btn btn-sm btn-warning" (click)="createToast(\'warning\')">Warning</button>            <button class="btn btn-sm btn-danger" (click)="createToast(\'danger\')">Danger</button>            <button class="btn btn-sm btn-success" (click)="createToast(\'success\')">Success</button>            <button class="btn btn-sm btn-primary" (click)="clearToasts()">Clear All Toasts</button>            <button class="btn btn-sm btn-secondary" (click)="clearLastToast()">Clear Last Toast</button>        </div>    </div></div><app-ngx-notifier></app-ngx-notifier></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="home-page">  <div class="m-ctnt">    <img src="/assets/angular.svg" alt="angular">    <h6>{{ title }}</h6>    <div class="buttons">      <a class="github-button" href="https://github.com/Sibiraj-S" aria-label="Follow @Sibiraj-S on GitHub">Follow        @Sibiraj-S</a>      <a class="github-button" href="https://github.com/Sibiraj-S/ngx-notifier/fork" aria-label="Fork Sibiraj-S/ngx-notifier on GitHub">Fork</a>      <a class="github-button" href="https://github.com/Sibiraj-S/ngx-notifier" aria-label="Star Sibiraj-S/ngx-notifier on GitHub">Star</a>      <a class="github-button" href="https://github.com/Sibiraj-S/ngx-notifier/issues" data-show-count="true"        aria-label="Issue Sibiraj-S/ngx-notifier on GitHub">Issue</a>      <a class="github-button" href="https://github.com/Sibiraj-S/ngx-notifier/archive/master.zip" aria-label="Download Sibiraj-S/ngx-notifier on GitHub">Download</a>    </div>    <br />    <div class="notifiers">      <button class="btn btn-sm btn-info" (click)="createToast(\'info\')">Info</button>      <button class="btn btn-sm btn-warning" (click)="createToast(\'warning\')">Warning</button>      <button class="btn btn-sm btn-danger" (click)="createToast(\'danger\')">Danger</button>      <button class="btn btn-sm btn-success" (click)="createToast(\'success\')">Success</button>      <button class="btn btn-sm btn-primary" (click)="clearToasts()">Clear All Toasts</button>      <button class="btn btn-sm btn-secondary" (click)="clearLastToast()">Clear Last Toast</button>    </div>  </div></div><app-ngx-notifier></app-ngx-notifier></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'NgxNotifierComponent', 'selector': 'app-ngx-notifier'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
