@@ -11,6 +11,18 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v2.0.1 (2018-09-22)
+
+#### Documentation
+
+* recompiled documentation for latest changes which also includes CHANGELOG ([676d35a](https://github.com/Sibiraj-S/ngx-notifier/commit/676d35a))
+
+#### Internal
+
+* fix end-to-end tests ([06899a8](https://github.com/Sibiraj-S/ngx-notifier/commit/06899a8))
+* migrate from travis-ci.org to travis-ci.com
+* removed vscode settings in favour of editorconfig ([25e54df](https://github.com/Sibiraj-S/ngx-notifier/commit/25e54df))
+
 ## v2.0.0 (2018-09-22)
 
 Upgrade to Angular 6
