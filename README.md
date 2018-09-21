@@ -7,8 +7,8 @@
 </p>
 <p align="center">A Simple Notification Service for Angular Applications</p>
 <p align="center">
-  <a href="https://travis-ci.org/Sibiraj-S/ngx-notifier">
-    <img alt="Build Status" src="https://travis-ci.org/Sibiraj-S/ngx-notifier.svg?branch=master">
+  <a href="https://travis-ci.com/Sibiraj-S/ngx-notifier">
+    <img alt="Build Status" src="https://travis-ci.com/Sibiraj-S/ngx-notifier.svg?branch=master">
   </a>
   <a href="https://www.npmjs.com/package/ngx-notifier">
     <img alt="npm version" src="https://img.shields.io/npm/v/ngx-notifier.svg">
