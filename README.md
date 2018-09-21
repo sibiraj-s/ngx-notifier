@@ -76,7 +76,6 @@ export class AppComponent {
   createNotification(){
       this._ngxNotifierService.createToast(message:string, style:string, duration: number);
   }
-
 }
 ```
 
