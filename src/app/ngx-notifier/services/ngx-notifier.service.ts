@@ -28,5 +28,4 @@ export class NgxNotifierService {
   clearLast() {
     this.clearLastToast.next();
   }
-
 }

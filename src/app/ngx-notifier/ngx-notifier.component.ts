@@ -26,7 +26,6 @@ import { NgxNotifierService } from './services/ngx-notifier.service';
 })
 
 export class NgxNotifierComponent implements OnDestroy {
-
   private componentDestroyed$: Subject<boolean> = new Subject();
 
   /** whether to allow duplicate messages or not */
@@ -58,7 +57,6 @@ export class NgxNotifierComponent implements OnDestroy {
    * @param _ngxNotifierService subscribe to get values form notifier service
    */
   constructor(private _ngxNotifierService: NgxNotifierService, private _domSanitizer: DomSanitizer) {
-
     this._ngxNotifierService.notification.pipe(
       takeUntil(this.componentDestroyed$)
     ).subscribe((notification: INotification) => { this.updateNotifications(notification); });
@@ -78,7 +76,6 @@ export class NgxNotifierComponent implements OnDestroy {
    * @param notification notification element
    */
   private updateNotifications(notification: INotification): void {
-
     // checks whether the message is alrady present in notifications
     const index = this.notifications.map(function (e) { return e.message; }).indexOf(notification.message);
 
@@ -166,5 +163,4 @@ export class NgxNotifierComponent implements OnDestroy {
     this.componentDestroyed$.next();
     this.componentDestroyed$.complete();
   }
-
 }

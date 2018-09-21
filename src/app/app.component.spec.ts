@@ -20,10 +20,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-  it(`should have as title 'A Simple Notification Service for Angular 5+ Applications'`, async(() => {
+  it(`should have as title 'A Simple Notification Service for Angular Applications'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('A Simple Notification Service for Angular 5+ Applications.');
+    expect(app.title).toEqual('A Simple Notification Service for Angular Applications.');
   }));
-
 });

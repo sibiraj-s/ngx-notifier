@@ -1,25 +1,34 @@
+$button-spacing: 0.3rem;
+
 .home-page {
-    padding-top: 4rem;
+  padding-top: 4rem;
 
-    .m-ctnt {
-        text-align: center;
-        width: 50%;
-        margin: auto;
+  .m-ctnt {
+    text-align: center;
+    width: 50%;
+    margin: auto;
 
-        img {
-            width: 20rem;
-        }
-
-        .notifiers {
-            margin-bottom: 2rem;
-
-            button {
-
-                &:focus,
-                &active {
-                    box-shadow: none !important;
-                }
-            }
-        }
+    img {
+      width: 20rem;
     }
+
+    .buttons {
+      span {
+        margin-right: $button-spacing;
+      }
+    }
+
+    .notifiers {
+      margin-bottom: 2rem;
+
+      button {
+        margin-right: $button-spacing;
+
+        &:focus,
+        &active {
+          box-shadow: none !important;
+        }
+      }
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 import { NgxNotifierService } from './ngx-notifier/services/ngx-notifier.service';
 import { jsonArray } from './data';
@@ -7,12 +7,12 @@ import { jsonArray } from './data';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent {
-
-  title = 'A Simple Notification Service for Angular 5+ Applications.';
+  title = 'A Simple Notification Service for Angular Applications.';
   jsonArray = jsonArray;
 
   constructor(private _ngxNotifierService: NgxNotifierService) { }
@@ -32,5 +32,4 @@ export class AppComponent {
   clearLastToast() {
     this._ngxNotifierService.clearLast();
   }
-
 }

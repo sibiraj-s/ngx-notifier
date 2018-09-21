@@ -1,23 +1,25 @@
 <div class="home-page">
-    <div class="m-ctnt">
-        <img src="/assets/angular.svg" alt="angular">
-        <h6>{{ title }}</h6>
-        <div class="buttons">
-            <a class="github-button" href="https://github.com/Sibiraj-S" aria-label="Follow @Sibiraj-S on GitHub">Follow @Sibiraj-S</a>
-            <a class="github-button" href="https://github.com/Sibiraj-S/ngx-notifier/fork" aria-label="Fork Sibiraj-S/ngx-notifier on GitHub">Fork</a>
-            <a class="github-button" href="https://github.com/Sibiraj-S/ngx-notifier" aria-label="Star Sibiraj-S/ngx-notifier on GitHub">Star</a>
-            <a class="github-button" href="https://github.com/Sibiraj-S/ngx-notifier/issues" data-show-count="true" aria-label="Issue Sibiraj-S/ngx-notifier on GitHub">Issue</a>
-            <a class="github-button" href="https://github.com/Sibiraj-S/ngx-notifier/archive/master.zip" aria-label="Download Sibiraj-S/ngx-notifier on GitHub">Download</a>
-        </div>
-        <br />
-        <div class="notifiers">
-            <button class="btn btn-sm btn-info" (click)="createToast('info')">Info</button>
-            <button class="btn btn-sm btn-warning" (click)="createToast('warning')">Warning</button>
-            <button class="btn btn-sm btn-danger" (click)="createToast('danger')">Danger</button>
-            <button class="btn btn-sm btn-success" (click)="createToast('success')">Success</button>
-            <button class="btn btn-sm btn-primary" (click)="clearToasts()">Clear All Toasts</button>
-            <button class="btn btn-sm btn-secondary" (click)="clearLastToast()">Clear Last Toast</button>
-        </div>
+  <div class="m-ctnt">
+    <img src="/assets/angular.svg" alt="angular">
+    <h6>{{ title }}</h6>
+    <div class="buttons">
+      <a class="github-button" href="https://github.com/Sibiraj-S" aria-label="Follow @Sibiraj-S on GitHub">Follow
+        @Sibiraj-S</a>
+      <a class="github-button" href="https://github.com/Sibiraj-S/ngx-notifier/fork" aria-label="Fork Sibiraj-S/ngx-notifier on GitHub">Fork</a>
+      <a class="github-button" href="https://github.com/Sibiraj-S/ngx-notifier" aria-label="Star Sibiraj-S/ngx-notifier on GitHub">Star</a>
+      <a class="github-button" href="https://github.com/Sibiraj-S/ngx-notifier/issues" data-show-count="true"
+        aria-label="Issue Sibiraj-S/ngx-notifier on GitHub">Issue</a>
+      <a class="github-button" href="https://github.com/Sibiraj-S/ngx-notifier/archive/master.zip" aria-label="Download Sibiraj-S/ngx-notifier on GitHub">Download</a>
     </div>
+    <br />
+    <div class="notifiers">
+      <button class="btn btn-sm btn-info" (click)="createToast('info')">Info</button>
+      <button class="btn btn-sm btn-warning" (click)="createToast('warning')">Warning</button>
+      <button class="btn btn-sm btn-danger" (click)="createToast('danger')">Danger</button>
+      <button class="btn btn-sm btn-success" (click)="createToast('success')">Success</button>
+      <button class="btn btn-sm btn-primary" (click)="clearToasts()">Clear All Toasts</button>
+      <button class="btn btn-sm btn-secondary" (click)="clearLastToast()">Clear Last Toast</button>
+    </div>
+  </div>
 </div>
 <app-ngx-notifier></app-ngx-notifier>

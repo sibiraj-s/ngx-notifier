@@ -9,6 +9,6 @@ describe('workspace-project App', () => {
 
   it('should display title message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('A Simple Notification Service for Angular 5+ Applications.');
+    expect(page.getParagraphText()).toEqual('A Simple Notification Service for Angular Applications.');
   });
 });
