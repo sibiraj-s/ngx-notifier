@@ -11,6 +11,16 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v2.0.0 (2018-09-22)
+
+Upgrade to Angular 6
+
+#### Dependency updates
+
+* update angular dependencies ([c7e796f](https://github.com/Sibiraj-S/ngx-notifier/commit/c7e796f))
+* update ng-packager to support angular v6 ([c7e796f](https://github.com/Sibiraj-S/ngx-notifier/commit/c7e796f))
+* update compodoc to v1.1.5 ([c7e796f](https://github.com/Sibiraj-S/ngx-notifier/commit/c7e796f))
+
 ## v1.3.1 (2018-06-28)
 
 #### Dependency Updates
