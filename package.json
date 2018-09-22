@@ -6,7 +6,7 @@
   "scripts": {
     "build": "ng build --prod",
     "build:package": "sh ./scripts/build.sh",
-    "docs": "./node_modules/.bin/compodoc --tsconfig=\"src/tsconfig.app.json\" -n \"NgxNotifier\" --disableCoverage --disablePrivate --disableInternal --disableLifeCycleHooks --disableProtected --hideGenerator --customFavicon=\"src/favicon.ico\" --output=\"docs/\"",
+    "docs": "compodoc",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "ng": "ng",
@@ -16,7 +16,7 @@
     "prerelease": "npm run build",
     "release": "sh ./scripts/release.sh",
     "start": "ng serve --aot --open --host 0.0.0.0 --port 4160",
-    "serve:docs": "./node_modules/.bin/compodoc --serve --open --output=\"docs/\"",
+    "serve:docs": "compodoc --serve --open --output=\"docs/\"",
     "test": "ng test",
     "test:single-run": "npm run lint && ng test --watch false"
   },
