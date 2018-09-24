@@ -22,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sibiraj-S/ngx-notifier.git"
+    "url": "git+https://github.com/sibiraj-s/ngx-notifier.git"
   },
   "bugs": {
-    "url": "https://github.com/Sibiraj-S/ngx-notifier/issues"
+    "url": "https://github.com/sibiraj-s/ngx-notifier/issues"
   },
-  "homepage": "https://github.com/Sibiraj-S/ngx-notifier",
+  "homepage": "https://github.com/sibiraj-s/ngx-notifier",
   "peerDependencies": {
     "@angular/animations": "^6.1.0",
     "@angular/common": "^6.1.0",

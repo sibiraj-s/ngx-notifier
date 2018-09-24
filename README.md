@@ -1,14 +1,14 @@
 # NgxNotifier
 
 <p align="center">
-  <a href="https://github.com/Sibiraj-S/ngx-notifier">
-   <img src="https://raw.githubusercontent.com/Sibiraj-S/ngx-notifier/master/src/assets/angular.png" alt="angular" width="350">
+  <a href="https://github.com/sibiraj-s/ngx-notifier">
+   <img src="https://raw.githubusercontent.com/sibiraj-s/ngx-notifier/master/src/assets/angular.png" alt="angular" width="350">
   </a>
 </p>
 <p align="center">A Simple Notification Service for Angular Applications</p>
 <p align="center">
-  <a href="https://travis-ci.com/Sibiraj-S/ngx-notifier">
-    <img alt="Build Status" src="https://travis-ci.com/Sibiraj-S/ngx-notifier.svg?branch=master">
+  <a href="https://travis-ci.com/sibiraj-s/ngx-notifier">
+    <img alt="Build Status" src="https://travis-ci.com/sibiraj-s/ngx-notifier.svg?branch=master">
   </a>
   <a href="https://www.npmjs.com/package/ngx-notifier">
     <img alt="npm version" src="https://img.shields.io/npm/v/ngx-notifier.svg">
@@ -16,7 +16,7 @@
   <a href="https://www.npmjs.com/package/ngx-notifier">
     <img alt="npm downloads" src="https://img.shields.io/npm/dm/ngx-notifier.svg">
   </a>
-  <a href="https://github.com/Sibiraj-S/ngx-notifier/blob/master/LICENSE">
+  <a href="https://github.com/sibiraj-s/ngx-notifier/blob/master/LICENSE">
     <img alt="license" src="https://img.shields.io/npm/l/ngx-notifier.svg">
   </a>
 </p>
@@ -136,8 +136,7 @@ Documentation is auto-generated using [compodoc][compodoc], and can be viewed he
 
 [npm]: https://www.npmjs.com/
 [yarn]: https://yarnpkg.com/lang/en/
-[github]: https://sibiraj-s.github.io/
-[angularjs-toast]: https://github.com/Sibiraj-S/angularjs-toast
-[wiki]: https://github.com/Sibiraj-S/ngx-notifier/wiki/ngx-notifier
+[angularjs-toast]: https://github.com/sibiraj-s/angularjs-toast
+[wiki]: https://github.com/sibiraj-s/ngx-notifier/wiki/ngx-notifier
 [Bootstrap4]: https://github.com/twbs/bootstrap
 [compodoc]: https://compodoc.github.io/website/

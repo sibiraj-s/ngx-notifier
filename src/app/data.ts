@@ -4,5 +4,5 @@ export const jsonArray = [
   'Hello Angular 5!',
   'ngx-notifier',
   'A Simple Notification',
-  'Powered by @Sibiraj-S'
+  'Powered by @sibiraj-s'
 ];
