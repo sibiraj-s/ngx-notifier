@@ -1,6 +1,6 @@
 {
   "name": "ngx-notifier",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A Simple Notification Service for Angular 5+ Applications",
   "license": "MIT",
   "scripts": {

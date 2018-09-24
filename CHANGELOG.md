@@ -11,6 +11,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v2.0.2 (2018-09-24)
+
+#### Internal
+
+* update github username ([27ef5e8](https://github.com/sibiraj-s/ngx-notifier/commit/27ef5e8))
+
 ## v2.0.1 (2018-09-22)
 
 #### Documentation
