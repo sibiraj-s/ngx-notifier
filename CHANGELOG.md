@@ -11,6 +11,16 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## Unreleased
+
+#### Dependency updates
+
+* update husky to 1.1.0 ([c8ce414](https://github.com/sibiraj-s/ngx-notifier/commit/c8ce414))
+
+#### Internal
+
+* add prepublish script to prevent accidental publish to npm registry. ([c8ce414](https://github.com/sibiraj-s/ngx-notifier/commit/c8ce414))
+
 ## v2.0.2 (2018-09-24)
 
 #### Internal
