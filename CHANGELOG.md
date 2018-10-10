@@ -21,6 +21,10 @@ All notable changes to this project will be documented in this file.
 
 * add prepublish script to prevent accidental publish to npm registry. ([c8ce414](https://github.com/sibiraj-s/ngx-notifier/commit/c8ce414))
 
+#### Documentation
+
+* use `gh-pages` branch to publish documentation ([f51aca4](https://github.com/sibiraj-s/ngx-notifier/commit/f51aca4))
+
 ## v2.0.2 (2018-09-24)
 
 #### Internal
