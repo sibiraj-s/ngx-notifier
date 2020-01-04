@@ -55,7 +55,7 @@ Import [bootstrap-4][Bootstrap4] into your application, which is a must
 Then in HTML
 
 ```html
-<app-ngx-notifier></app-ngx-notifier>
+<ngx-notifier></ngx-notifier>
 ```
 
 Then in TS
@@ -106,15 +106,15 @@ this._ngxNotifierService.clearLast();
 Notifier component accepts
 
 ```html
-<app-ngx-notifier [allowDuplicates]="true"
-                  [allowHTML]="false"
-                  [className]="myCustomClassName"
-                  [duration]="5000"
-                  [disableAnimations]="false"
-                  [dismissOnClick]="false"
-                  [insertOnTop]="true"
-                  [max]="5">
-</app-ngx-notifier>
+<app-notifier [allowDuplicates]="true"
+              [allowHTML]="false"
+              [className]="myCustomClassName"
+              [duration]="5000"
+              [disableAnimations]="false"
+              [dismissOnClick]="false"
+              [insertOnTop]="true"
+              [max]="5">
+</app-notifier>
 ```
 
 * **allowDuplicates:** whether to allow duplicate messages in notifications

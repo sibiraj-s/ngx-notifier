@@ -9,7 +9,7 @@ import { INotification } from './others/notification-helper';
 import { NgxNotifierService } from './services/ngx-notifier.service';
 
 /**
- * Notifier compoent, which holds all the notifications can be accessed via `app-ngx-notifier` selector
+ * Notifier compoent, which holds all the notifications can be accessed via `ngx-notifier` selector
  */
 @Component({
   selector: 'ngx-notifier',
