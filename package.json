@@ -7,7 +7,7 @@
   "bugs": "https://github.com/sibiraj-s/ngx-notifier/issues",
   "homepage": "https://github.com/sibiraj-s/ngx-notifier",
   "engines": {
-    "node": "^10"
+    "node": ">=12"
   },
   "scripts": {
     "build": "ng build --prod",
