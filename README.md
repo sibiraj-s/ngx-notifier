@@ -106,7 +106,7 @@ this._ngxNotifierService.clearLast();
 Notifier component accepts
 
 ```html
-<app-notifier [allowDuplicates]="true"
+<ngx-notifier [allowDuplicates]="true"
               [allowHTML]="false"
               [className]="myCustomClassName"
               [duration]="5000"
@@ -114,7 +114,7 @@ Notifier component accepts
               [dismissOnClick]="false"
               [insertOnTop]="true"
               [max]="5">
-</app-notifier>
+</ngx-notifier>
 ```
 
 * **allowDuplicates:** whether to allow duplicate messages in notifications
