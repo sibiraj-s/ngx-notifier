@@ -15,21 +15,21 @@ export class AppComponent {
   title = 'A Simple Notification Service for Angular Applications.';
   jsonArray = jsonArray;
 
-  constructor(private _ngxNotifierService: NgxNotifierService) { }
+  constructor(private ngxNotifierService: NgxNotifierService) { }
 
   /** crates a toast message */
   createToast(style: string): void {
-    this._ngxNotifierService.createToast(this.jsonArray[Math.floor(Math.random() * this.jsonArray.length)], style);
+    this.ngxNotifierService.createToast(this.jsonArray[Math.floor(Math.random() * this.jsonArray.length)], style);
     return;
   }
 
   /** clears all toast messages */
   clearToasts() {
-    this._ngxNotifierService.clear();
+    this.ngxNotifierService.clear();
   }
 
   /** clear last toast notification */
   clearLastToast() {
-    this._ngxNotifierService.clearLast();
+    this.ngxNotifierService.clearLast();
   }
 }

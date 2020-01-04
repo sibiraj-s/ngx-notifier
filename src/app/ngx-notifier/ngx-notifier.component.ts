@@ -12,7 +12,7 @@ import { NgxNotifierService } from './services/ngx-notifier.service';
  * Notifier compoent, which holds all the notifications can be accessed via `app-ngx-notifier` selector
  */
 @Component({
-  selector: 'app-ngx-notifier',
+  selector: 'ngx-notifier',
   templateUrl: './ngx-notifier.component.html',
   styleUrls: ['./ngx-notifier.component.scss'],
   animations: [
@@ -54,18 +54,18 @@ export class NgxNotifierComponent implements OnDestroy {
   /**
    * NgxNotifierComponent Constructor
    *
-   * @param _ngxNotifierService subscribe to get values form notifier service
+   * @param ngxNotifierService subscribe to get values form notifier service
    */
-  constructor(private _ngxNotifierService: NgxNotifierService, private _domSanitizer: DomSanitizer) {
-    this._ngxNotifierService.notification.pipe(
+  constructor(private ngxNotifierService: NgxNotifierService, private domSanitizer: DomSanitizer) {
+    this.ngxNotifierService.notification.pipe(
       takeUntil(this.componentDestroyed$)
     ).subscribe((notification: INotification) => { this.updateNotifications(notification); });
 
-    this._ngxNotifierService.clearToasts.pipe(
+    this.ngxNotifierService.clearToasts.pipe(
       takeUntil(this.componentDestroyed$)
     ).subscribe(() => { this.notifications = []; });
 
-    this._ngxNotifierService.clearLastToast.pipe(
+    this.ngxNotifierService.clearLastToast.pipe(
       takeUntil(this.componentDestroyed$)
     ).subscribe(() => { this.clearLastToast(); });
   }
@@ -77,7 +77,7 @@ export class NgxNotifierComponent implements OnDestroy {
    */
   private updateNotifications(notification: INotification): void {
     // checks whether the message is alrady present in notifications
-    const index = this.notifications.map(function (e) { return e.message; }).indexOf(notification.message);
+    const index = this.notifications.map((e) => e.message).indexOf(notification.message);
 
     if (!this.allowDuplicates) {
       if (index !== -1) {
@@ -91,10 +91,10 @@ export class NgxNotifierComponent implements OnDestroy {
     // sanitize html if enableHTML is set to true
     let sanitizedMessage: string | SafeHtml;
     if (notification.message && this.allowHTML) {
-      sanitizedMessage = this._domSanitizer.sanitize(SecurityContext.HTML, notification.message);
+      sanitizedMessage = this.domSanitizer.sanitize(SecurityContext.HTML, notification.message);
     }
     // set sanitized output to notification message
-    notification['message'] = sanitizedMessage || notification.message;
+    notification.message = sanitizedMessage || notification.message;
 
     // insert notification in the first position of the array
     if (this.insertOnTop) {
@@ -121,7 +121,6 @@ export class NgxNotifierComponent implements OnDestroy {
     }, notification.duration || this.duration);
 
     return;
-
   }
 
   /**
@@ -150,7 +149,7 @@ export class NgxNotifierComponent implements OnDestroy {
 
   /** clear last inserted toast notification */
   private clearLastToast(): void {
-    const index = this.notifications.map(function (e) { return e.id; }).indexOf(this.lastInsertedNotificationId);
+    const index = this.notifications.map((e) => e.id).indexOf(this.lastInsertedNotificationId);
 
     if (this.notifications.length !== 0 && index !== -1) {
       this.notifications.splice(index, 1);

@@ -8,12 +8,12 @@ $button-spacing: 0.3rem;
     width: 50%;
     margin: auto;
 
-    img {
+    .logo {
       width: 20rem;
     }
 
     .buttons {
-      span {
+      a {
         margin-right: $button-spacing;
       }
     }
