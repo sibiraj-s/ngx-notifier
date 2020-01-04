@@ -3,6 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 > **Tags**
+>
 > - Features
 > - Bug Fixes
 > - Performance Improvements
@@ -11,15 +12,25 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
-## Unreleased
+## v3.0.0 (2020-01-04)
+
+#### Breaking Changes
+
+- app-ngx-paginator is renamed to ngx-paginator ([78cb12f](https://github.com/sibiraj-s/ngx-notifier/commit/78cb12f))
+
+#### Features
+
+- support angualr-8 ([78cb12f](https://github.com/sibiraj-s/ngx-notifier/commit/78cb12f))
 
 #### Dependency updates
 
+- bump dependencies ([78cb12f](https://github.com/sibiraj-s/ngx-notifier/commit/78cb12f))
 - update husky to 1.1.0 ([c8ce414](https://github.com/sibiraj-s/ngx-notifier/commit/c8ce414))
 
 #### Internal
 
 - add prepublish script to prevent accidental publish to npm registry. ([c8ce414](https://github.com/sibiraj-s/ngx-notifier/commit/c8ce414))
+- migrate to github-actions from travis-ci ([d3cac9d](https://github.com/sibiraj-s/ngx-notifier/commit/d3cac9d))
 
 #### Documentation
 
