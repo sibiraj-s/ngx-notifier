@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, SecurityContext } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import { trigger, style, transition, animate, state } from '@angular/animations';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -89,7 +89,7 @@ export class NgxNotifierComponent implements OnDestroy {
     this.lastInsertedNotificationId = notification.id;
 
     // sanitize html if enableHTML is set to true
-    let sanitizedMessage: string | SafeHtml;
+    let sanitizedMessage: string;
     if (notification.message && this.allowHTML) {
       sanitizedMessage = this.domSanitizer.sanitize(SecurityContext.HTML, notification.message);
     }
