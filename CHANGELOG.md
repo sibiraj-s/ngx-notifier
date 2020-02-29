@@ -12,6 +12,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v4.0.0 (2020-02-29)
+
+#### Features
+
+- support angualr 9 ([fd9234a](https://github.com/sibiraj-s/ngx-notifier/commit/fd9234a))
+
 ## v3.0.0 (2020-01-04)
 
 #### Breaking Changes
