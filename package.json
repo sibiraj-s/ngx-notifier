@@ -12,7 +12,7 @@
   "scripts": {
     "build": "ng build --prod",
     "build:package": "ng-packagr -p ng-package.json",
-    "docs": "compodoc && npm run publish:docs",
+    "build:docs": "compodoc",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "lint:scripts": "eslint ./scripts",
@@ -20,7 +20,7 @@
     "postbuild": "npm run build:package",
     "prepublishOnly": "node ./scripts/pre-publish.js",
     "prerelease": "npm run build",
-    "publish:docs": "node ./scripts/publish-docs.js",
+    "publish:docs": "npm run build:docs && node ./scripts/publish-docs.js",
     "release": "sh ./scripts/release.sh",
     "start": "ng serve --aot --open --host 0.0.0.0 --port 4160",
     "serve:docs": "compodoc --serve --open --output=\"docs/\"",
