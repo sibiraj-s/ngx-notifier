@@ -23,6 +23,7 @@ $button-spacing: 0.3rem;
 
       button {
         margin-right: $button-spacing;
+        margin-bottom: $button-spacing;
 
         &:focus,
         &active {
