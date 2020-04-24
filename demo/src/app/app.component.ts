@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
-import { NgxNotifierService } from './ngx-notifier/services/ngx-notifier.service';
+import { NgxNotifierService } from 'ngx-notifier';
 import { jsonArray } from './data';
 
 /** App Component is the root component of the application */

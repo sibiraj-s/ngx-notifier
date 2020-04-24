@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://github.com/sibiraj-s/ngx-notifier">
-   <img src="https://raw.githubusercontent.com/sibiraj-s/ngx-notifier/master/src/assets/angular.png" alt="angular" width="350">
+   <img src="./assets/angular.png" alt="angular" width="350">
   </a>
 </p>
 <p align="center">A Simple Notification Service for Angular Applications</p>
