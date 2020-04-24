@@ -12,6 +12,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v5.0.0 (2020-04-25)
+
+#### Features
+
+- fix compatibility issues with ivy compiler ([e00de3f](https://github.com/sibiraj-s/ngx-notifier/commit/e00de3f))
+
 ## v4.0.0 (2020-02-29)
 
 #### Features
