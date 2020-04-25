@@ -71,18 +71,18 @@ import { NgxNotifierService } from './ngx-notifier/services/ngx-notifier.service
 })
 
 export class AppComponent {
-  constructor(private _ngxNotifierService: NgxNotifierService) { }
+  constructor(private ngxNotifierService: NgxNotifierService) { }
 
   createNotification(){
-      this._ngxNotifierService.createToast(message:string, style:string, duration: number);
+      this.ngxNotifierService.createToast(message:string, style:string, duration: number);
   }
 }
 ```
 
 #### Create a toast
 
-```typescript
-this._ngxNotifierService.createToast(message:string, style:string, duration: number);
+```ts
+this.ngxNotifierService.createToast(message:string, style:string, duration: number);
 ```
 
 * **message** message to be sent as notification
@@ -91,14 +91,14 @@ this._ngxNotifierService.createToast(message:string, style:string, duration: num
 
 #### Clear all toasts
 
-```typescript
-this._ngxNotifierService.clear();
+```ts
+this.ngxNotifierService.clear();
 ```
 
 #### Clear the last toast
 
-```typescript
-this._ngxNotifierService.clearLast();
+```ts
+this.ngxNotifierService.clearLast();
 ```
 
 ### Notifier Component
