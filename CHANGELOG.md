@@ -12,6 +12,16 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v5.0.1 (2020-04-25)
+
+#### Documentation
+
+- update README.md ([1da2e1b](https://github.com/sibiraj-s/ngx-notifier/commit/1da2e1b))
+
+#### Internal
+
+- fix invalid test file path in tsconfig ([ba5ef90](https://github.com/sibiraj-s/ngx-notifier/commit/ba5ef90))
+
 ## v5.0.0 (2020-04-25)
 
 #### Features
