@@ -12,6 +12,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v5.0.2 (2020-04-26)
+
+#### Dependency Updates
+
+- update peerDependencies ([44a6c71](https://github.com/sibiraj-s/ngx-notifier/commit/44a6c71))
+
 ## v5.0.1 (2020-04-25)
 
 #### Documentation
