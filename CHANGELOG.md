@@ -12,6 +12,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v6.0.0 (2020-10-28)
+
+#### Features
+
+- support angualr 10 ([57b7ab3](https://github.com/sibiraj-s/ngx-notifier/commit/57b7ab3))
+
 ## v5.0.2 (2020-04-26)
 
 #### Dependency Updates
