@@ -24,12 +24,12 @@ export class AppComponent {
   }
 
   /** clears all toast messages */
-  clearToasts() {
+  clearToasts(): void {
     this.ngxNotifierService.clear();
   }
 
   /** clear last toast notification */
-  clearLastToast() {
+  clearLastToast(): void {
     this.ngxNotifierService.clearLast();
   }
 }

@@ -1,6 +1,7 @@
 import { AppPage } from './app.po';
+import { browser, logging } from 'protractor';
 
-describe('workspace-project App', () => {
+describe('ngx-editor App', () => {
   let page: AppPage;
 
   beforeEach(() => {
@@ -9,6 +10,14 @@ describe('workspace-project App', () => {
 
   it('should display title message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('A Simple Notification Service for Angular Applications.');
+    expect(page.getTitleText()).toEqual('A Simple Notification Service for Angular Applications.');
+  });
+
+  afterEach(async () => {
+    // Assert that there are no errors emitted from the browser
+    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
+    expect(logs).not.toContain(jasmine.objectContaining({
+      level: logging.Level.SEVERE,
+    } as logging.Entry));
   });
 });
