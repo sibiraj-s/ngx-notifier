@@ -1,10 +1,9 @@
-# NgxNotifier
-
 <p align="center">
   <a href="https://github.com/sibiraj-s/ngx-notifier">
    <img src="./assets/angular.png" alt="angular" width="350">
   </a>
 </p>
+<h1 align="center">NgxNotifier</h1>
 <p align="center">A Simple Notification Service for Angular Applications</p>
 <p align="center">
   <a href="https://github.com/sibiraj-s/ngx-notifier/actions">
@@ -130,13 +129,8 @@ Notifier component accepts
 
 Demo at stackblitz [ngx-notifier](https://ngx-notifier.stackblitz.io)
 
-### Documentation
-
-Documentation is auto-generated using [compodoc][compodoc], and can be viewed here: [https://sibiraj-s.github.io/ngx-notifier/](https://sibiraj-s.github.io/ngx-notifier/)
-
 [npm]: https://www.npmjs.com/
 [yarn]: https://yarnpkg.com/lang/en/
 [angularjs-toast]: https://github.com/sibiraj-s/angularjs-toast
 [wiki]: https://github.com/sibiraj-s/ngx-notifier/wiki/ngx-notifier
 [Bootstrap4]: https://github.com/twbs/bootstrap
-[compodoc]: https://compodoc.github.io/website/
