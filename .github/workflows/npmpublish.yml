@@ -1,25 +1,14 @@
 name: NPM Publish
 
 env:
-  NODE_VERSION: 14
+  NODE_VERSION: 16
 
 on:
   push:
     tags: v*
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: ${{env.NODE_VERSION}}
-      - run: npm ci
-      - run: npm run test:lib
-
-  publish-npm:
-    needs: test
+  build-publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -27,7 +16,20 @@ jobs:
         with:
           node-version: ${{env.NODE_VERSION}}
           registry-url: https://registry.npmjs.org/
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - run: npm ci
-      - run: npm run release
+      - run: npm run build:lib
+        env:
+          NODE_ENV: production
+
+      - name: Publish to NPM
+        run: npm publish dist/ngx-notifier/
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

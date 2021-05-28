@@ -1,0 +1,24 @@
+{
+  "name": "ngx-notifier",
+  "version": "6.0.0",
+  "description": "A Simple Notification Service for Angular Applications",
+  "license": "MIT",
+  "repository": "https://github.com/sibiraj-s/ngx-notifier.git",
+  "bugs": "https://github.com/sibiraj-s/ngx-notifier/issues",
+  "homepage": "https://github.com/sibiraj-s/ngx-notifier",
+  "keywords": [
+    "notifier",
+    "angualr"
+  ],
+  "peerDependencies": {
+    "@angular/animations": ">=12.0.0",
+    "@angular/common": ">=12.0.0",
+    "@angular/core": ">=12.0.0",
+    "@angular/platform-browser": ">=12.0.0",
+    "bootstrap": "^4.0.0",
+    "rxjs": "^6.6.0"
+  },
+  "dependencies": {
+    "tslib": "^2.1.0"
+  }
+}
