@@ -12,6 +12,13 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v7.0.0 (2021-05-29)
+
+#### Breaking Changes
+
+- requires angular 12 or greater ([2c18e0f](https://github.com/sibiraj-s/ngx-notifier/commit/2c18e0f))
+- bootstrap is no longer a dependency ([2c0750c](https://github.com/sibiraj-s/ngx-notifier/commit/2c0750c))
+
 ## v6.0.0 (2020-10-28)
 
 #### Features
