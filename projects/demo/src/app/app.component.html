@@ -1,31 +1,49 @@
-<div class="home-page">
-  <div class="m-ctnt">
-    <img class="logo" src="/assets/angular.svg" alt="angular">
-    <h6>{{ title }}</h6>
-    <div class="buttons">
-      <a href="https://github.com/sibiraj-s" target="_blank">
-        <img src="https://badgen.net/badge/github/Follow%20@sibiraj-s?icon&label" alt="Follow @sibiraj-s on GitHub" />
-      </a>
-      <a href="https://github.com/sibiraj-s/ngx-notifier/fork" target="_blank">
-        <img src="https://badgen.net/badge/git/Fork%20ngx-notifier?icon&label"
-          alt="Fork sibiraj-s/ngx-notifier on GitHub" />
-      </a>
-      <a href="https://www.npmjs.com/package/ngx-notifier" target="_blank">
-        <img src="https://badgen.net/npm/v/ngx-notifier" alt="NPM Version" />
-      </a>
-      <a href="https://github.com/sibiraj-s/ngx-notifier/blob/master/LICENSE" target="_blank">
-        <img src="https://badgen.net/github/license/sibiraj-s/ngx-notifier" alt="License" />
-      </a>
-    </div>
-    <br />
-    <div class="notifiers">
-      <button class="btn btn-sm btn-info" (click)="createToast('info')">Info</button>
-      <button class="btn btn-sm btn-warning" (click)="createToast('warning')">Warning</button>
-      <button class="btn btn-sm btn-danger" (click)="createToast('danger')">Danger</button>
-      <button class="btn btn-sm btn-success" (click)="createToast('success')">Success</button>
-      <button class="btn btn-sm btn-primary" (click)="clearToasts()">Clear All Toasts</button>
-      <button class="btn btn-sm btn-secondary" (click)="clearLastToast()">Clear Last Toast</button>
-    </div>
+<div class="flex flex-col items-center content-center h-full">
+  <img class="w-80" src="/assets/angular.svg" alt="angular">
+  <h6 class="mb-2">{{ title }}</h6>
+  <div class="flex">
+    <a href="https://github.com/sibiraj-s" target="_blank">
+      <img src="https://badgen.net/badge/github/Follow%20@sibiraj-s?icon&label" alt="Follow @sibiraj-s on GitHub" />
+    </a>
+    <a class="ml-1" href="https://github.com/sibiraj-s/ngx-notifier/fork" target="_blank">
+      <img src="https://badgen.net/badge/git/Fork%20ngx-notifier?icon&label"
+        alt="Fork sibiraj-s/ngx-notifier on GitHub" />
+    </a>
+    <a class="ml-1" href="https://www.npmjs.com/package/ngx-notifier" target="_blank">
+      <img src="https://badgen.net/npm/v/ngx-notifier" alt="NPM Version" />
+    </a>
+    <a class="ml-1" href="https://github.com/sibiraj-s/ngx-notifier/blob/master/LICENSE" target="_blank">
+      <img src="https://badgen.net/github/license/sibiraj-s/ngx-notifier" alt="License" />
+    </a>
+  </div>
+  <div class="mt-5">
+    <button class="btn border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-blue-200 focus:ring-blue-600"
+      (click)="createToast('info')">
+      Info
+    </button>
+    <button
+      class="btn border-yellow-600 text-yellow-400 hover:bg-yellow-600 hover:text-yellow-200 focus:ring-yellow-600 ml-2"
+      (click)="createToast('warning')">
+      Warning
+    </button>
+    <button class="btn border-red-600 text-red-400 hover:bg-red-600 hover:text-red-200 focus:ring-red-600 ml-2"
+      (click)="createToast('danger')">
+      Danger
+    </button>
+    <button
+      class="btn border-green-600 text-green-400 hover:bg-green-600 hover:text-green-200 focus:ring-green-600 ml-2"
+      (click)="createToast('success')">
+      Success
+    </button>
+    <button
+      class="btn border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-purple-200 focus:ring-purple-600 ml-2"
+      (click)="clearToasts()">
+      Clear All Toasts
+    </button>
+    <button class="btn border-gray-600 text-gray-400 hover:bg-gray-600 hover:text-gray-200 focus:ring-gray-600 ml-2"
+      (click)="clearLastToast()">
+      Clear Last Toast
+    </button>
   </div>
 </div>
 <ngx-notifier [allowHTML]="true"></ngx-notifier>

@@ -1,35 +1,3 @@
-$button-spacing: 0.3rem;
-
-.home-page {
-  padding-top: 4rem;
-
-  .m-ctnt {
-    text-align: center;
-    width: 50%;
-    margin: auto;
-
-    .logo {
-      width: 20rem;
-    }
-
-    .buttons {
-      a {
-        margin-right: $button-spacing;
-      }
-    }
-
-    .notifiers {
-      margin-bottom: 2rem;
-
-      button {
-        margin-right: $button-spacing;
-        margin-bottom: $button-spacing;
-
-        &:focus,
-        &active {
-          box-shadow: none !important;
-        }
-      }
-    }
-  }
+.btn {
+  @apply border-2 rounded-lg px-3 py-1 cursor-pointer focus:outline-none focus:ring-1;
 }
