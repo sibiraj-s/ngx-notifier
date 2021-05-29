@@ -22,7 +22,7 @@
 
 ## Getting Started
 
-ngx-notifier is a simple notification service for Angular applications and is meant to be simple with limited features. Applications using bootstrap4 can make use of it to make simple toast notifications.
+ngx-notifier is a simple notification service for Angular applications and is meant to be simple with limited features.
 
 If you are looking for angularjs(1.x) version, Try [angularjs-toast][angularjs-toast]
 
@@ -48,8 +48,6 @@ import { NgxNotifierModule } from 'ngx-notifier';
   imports: [ BrowserAnimationsModule, NgxNotifierModule ]
 })
 ```
-
-Import [bootstrap-4][Bootstrap4] into your application, which is a must
 
 Then in HTML
 
@@ -133,4 +131,3 @@ Demo at stackblitz [ngx-notifier](https://ngx-notifier.stackblitz.io)
 [yarn]: https://yarnpkg.com/lang/en/
 [angularjs-toast]: https://github.com/sibiraj-s/angularjs-toast
 [wiki]: https://github.com/sibiraj-s/ngx-notifier/wiki/ngx-notifier
-[Bootstrap4]: https://github.com/twbs/bootstrap
