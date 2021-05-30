@@ -83,7 +83,7 @@ this.ngxNotifierService.createToast(message:string, style:string, duration: numb
 ```
 
 * **message** message to be sent as notification
-* **style** notification style, which can be the following `primary|secondary|success|danger|warning|info|light|dark`. Default is `info`
+* **style** notification style, which can be the following `success|danger|warning|info`. Default is `info`
 * **duration** in milliseconds, timeout for the notification
 
 #### Clear all toasts
