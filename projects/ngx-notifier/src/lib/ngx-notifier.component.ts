@@ -159,7 +159,7 @@ export class NgxNotifierComponent implements OnDestroy {
 
   /** stop subscription when component is destroyed */
   ngOnDestroy(): void {
-    this.componentDestroyed$.next();
+    this.componentDestroyed$.next(true);
     this.componentDestroyed$.complete();
   }
 }
