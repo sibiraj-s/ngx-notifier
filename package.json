@@ -10,8 +10,6 @@
     "lint": "ng lint",
     "ng": "ng",
     "postbuild:lib": "node ./scripts/postbuild.js",
-    "prerelease": "npm run build:lib",
-    "release": "sh ./scripts/release.sh",
     "demo": "ng serve --open --port 4160",
     "test:lib": "ng test ngx-notifier --browsers ChromeHeadless --watch false",
     "test:demo": "ng test demo --browsers ChromeHeadless --watch false",
