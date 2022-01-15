@@ -1,6 +1,6 @@
 const fs = require('node:fs/promises');
 const path = require('node:path');
-const chalk = require('chalk');
+const colors = require('picocolors');
 
 const copyFile = async (srcFilePath, destFilePath) => {
   const fileName = path.basename(srcFilePath);
@@ -8,9 +8,9 @@ const copyFile = async (srcFilePath, destFilePath) => {
     const srcPath = path.resolve(process.cwd(), srcFilePath);
     const destPath = path.resolve(process.cwd(), 'dist/ngx-notifier', destFilePath);
     await fs.copyFile(srcPath, destPath);
-    console.log(chalk.green(`- File Copied: ${fileName}`));
+    console.log(colors.green(`- File Copied: ${fileName}`));
   } catch (err) {
-    console.log(chalk.red(`Error while copying ${fileName}`), err);
+    console.log(colors.red(`Error while copying ${fileName}`), err);
   }
 };
 
