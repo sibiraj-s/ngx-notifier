@@ -1,8 +1,8 @@
 module.exports = {
-  purge: [
-    'src/**/*.{html,ts}'
+  content: [
+    // TODO: tailwind resolves from the root, regardless of project location
+    './projects/demo/src/**/*.{html,ts}'
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
   },
