@@ -5,11 +5,10 @@
   },
   "scripts": {
     "build:demo": "ng build demo",
-    "build:lib": "ng build ngx-notifier",
-    "build": "npm run build:lib && npm run build:demo",
+    "build": "ng build",
+    "postbuild": "node ./scripts/postbuild.js",
     "lint": "ng lint",
     "ng": "ng",
-    "postbuild:lib": "node ./scripts/postbuild.js",
     "demo": "ng serve --open --port 4160",
     "test:lib": "ng test ngx-notifier --browsers ChromeHeadless --watch false",
     "test:demo": "ng test demo --browsers ChromeHeadless --watch false",
