@@ -5,5 +5,5 @@ export const jsonArray = [
   'ngx-notifier',
   'A Simple Notification',
   'ngx-notifier by <b>@sibiraj-s</b>',
-  'Follow me <a href="https://github.com/sibiraj-s" target="_blank">@github/sibiraj-s</a>'
+  'Follow me <a href="https://github.com/sibiraj-s" target="_blank">@github/sibiraj-s</a>',
 ];

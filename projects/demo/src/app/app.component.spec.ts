@@ -8,9 +8,9 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
       ],
-      imports: [BrowserAnimationsModule, NgxNotifierModule]
+      imports: [BrowserAnimationsModule, NgxNotifierModule],
     }).compileComponents();
   });
 
@@ -20,7 +20,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'A Simple Notification Service for Angular Applications'`, () => {
+  it('should have as title \'A Simple Notification Service for Angular Applications\'', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('A Simple Notification Service for Angular Applications.');

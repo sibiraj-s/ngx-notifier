@@ -19,10 +19,10 @@ import { NgxNotifierService } from './services/ngx-notifier.service';
     trigger('animateToasts', [
       state('void', style({ opacity: 0 })),
       transition(':enter, :leave', [ // void <=> *
-        animate('0.3s ease')
-      ])
-    ])
-  ]
+        animate('0.3s ease'),
+      ]),
+    ]),
+  ],
 })
 
 export class NgxNotifierComponent implements OnDestroy {
@@ -58,15 +58,15 @@ export class NgxNotifierComponent implements OnDestroy {
    */
   constructor(private ngxNotifierService: NgxNotifierService, private domSanitizer: DomSanitizer) {
     this.ngxNotifierService.notification.pipe(
-      takeUntil(this.componentDestroyed$)
+      takeUntil(this.componentDestroyed$),
     ).subscribe((notification: INotification) => { this.updateNotifications(notification); });
 
     this.ngxNotifierService.clearToasts.pipe(
-      takeUntil(this.componentDestroyed$)
+      takeUntil(this.componentDestroyed$),
     ).subscribe(() => { this.notifications = []; });
 
     this.ngxNotifierService.clearLastToast.pipe(
-      takeUntil(this.componentDestroyed$)
+      takeUntil(this.componentDestroyed$),
     ).subscribe(() => { this.clearLastToast(); });
   }
 
@@ -119,8 +119,6 @@ export class NgxNotifierComponent implements OnDestroy {
     setTimeout(() => {
       this.notifications.splice(index, 1);
     }, notification.duration || this.duration);
-
-    return;
   }
 
   /**
@@ -132,7 +130,6 @@ export class NgxNotifierComponent implements OnDestroy {
     if (index !== undefined || index !== null) {
       this.notifications.splice(index, 1);
     }
-    return;
   }
 
   /**
@@ -144,7 +141,6 @@ export class NgxNotifierComponent implements OnDestroy {
     if (this.dismissOnClick) {
       this.removeNotification(index);
     }
-    return;
   }
 
   /** clear last inserted toast notification */
@@ -154,7 +150,6 @@ export class NgxNotifierComponent implements OnDestroy {
     if (this.notifications.length !== 0 && index !== -1) {
       this.notifications.splice(index, 1);
     }
-    return;
   }
 
   /** stop subscription when component is destroyed */

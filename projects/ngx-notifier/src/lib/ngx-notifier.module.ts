@@ -8,7 +8,7 @@ import { NgxNotifierService } from './services/ngx-notifier.service';
   imports: [CommonModule],
   declarations: [NgxNotifierComponent],
   providers: [NgxNotifierService],
-  exports: [NgxNotifierComponent]
+  exports: [NgxNotifierComponent],
 })
 
 export class NgxNotifierModule { }

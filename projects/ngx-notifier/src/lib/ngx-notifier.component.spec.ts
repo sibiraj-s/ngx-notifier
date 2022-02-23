@@ -12,7 +12,7 @@ describe('NgxNotifierComponent', () => {
     await TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule],
       declarations: [NgxNotifierComponent],
-      providers: [NgxNotifierService]
+      providers: [NgxNotifierService],
     })
       .compileComponents();
   });

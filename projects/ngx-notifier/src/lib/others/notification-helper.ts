@@ -1,6 +1,5 @@
 /** Notification Class */
 export class Notification {
-
   /** unique id for each notification */
   id: string;
   /** message to be shown */
@@ -18,7 +17,7 @@ export class Notification {
    * @param duration timeout for notification
    */
   constructor(message: string, style?: string, duration?: number) {
-    this.id = '_' + Math.random().toString(36).substr(2, 9); // generate a random number
+    this.id = `_${Math.random().toString(36).substring(2, 11)}`; // generate a random number
     this.message = message;
     this.style = style || 'info';
     this.duration = duration;

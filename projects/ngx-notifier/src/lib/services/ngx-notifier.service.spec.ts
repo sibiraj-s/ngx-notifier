@@ -5,7 +5,7 @@ import { NgxNotifierService } from './ngx-notifier.service';
 describe('NgxNotifierService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [NgxNotifierService]
+      providers: [NgxNotifierService],
     });
   });
 

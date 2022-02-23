@@ -7,14 +7,14 @@ import { NgxNotifierModule } from 'ngx-notifier';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NgxNotifierModule
+    NgxNotifierModule,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 
 export class AppModule { }

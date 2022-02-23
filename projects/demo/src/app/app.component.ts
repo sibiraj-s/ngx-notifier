@@ -8,7 +8,7 @@ import { jsonArray } from './data';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 
 export class AppComponent {
@@ -20,7 +20,6 @@ export class AppComponent {
   /** crates a toast message */
   createToast(style: string): void {
     this.ngxNotifierService.createToast(this.jsonArray[Math.floor(Math.random() * this.jsonArray.length)], style);
-    return;
   }
 
   /** clears all toast messages */
