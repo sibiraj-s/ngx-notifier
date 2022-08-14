@@ -16,7 +16,7 @@ All notable changes to this project will be documented in this file.
 
 #### Breaking Changes
 
-- requires angular 13 or greater ([40789f1](https://github.com/sibiraj-s/ngx-notifier/commit/40789f1))
+- requires angular 14 or greater ([40789f1](https://github.com/sibiraj-s/ngx-notifier/commit/40789f1))
 
 ## v8.0.0 (2022-01-15)
 
