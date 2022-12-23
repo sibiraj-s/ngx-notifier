@@ -12,6 +12,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v10.0.0 (2022-12-23)
+
+#### Breaking Changes
+
+- requires angular 15 or greater ([322552f](https://github.com/sibiraj-s/ngx-notifier/commit/322552f))
+
 ## v9.0.0 (2022-08-14)
 
 #### Breaking Changes
