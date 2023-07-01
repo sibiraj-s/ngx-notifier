@@ -10,12 +10,13 @@
     "notifier",
     "angualr"
   ],
+  "sideEffects": false,
   "peerDependencies": {
-    "@angular/animations": ">=15.0.0",
-    "@angular/common": ">=15.0.0",
-    "@angular/core": ">=15.0.0",
-    "@angular/platform-browser": ">=15.0.0",
-    "rxjs": "^7.5.0"
+    "@angular/animations": ">=16.0.0",
+    "@angular/common": ">=16.0.0",
+    "@angular/core": ">=6.0.0",
+    "@angular/platform-browser": ">=6.0.0",
+    "rxjs": "^7.8.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
