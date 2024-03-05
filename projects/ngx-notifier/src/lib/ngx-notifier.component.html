@@ -2,7 +2,7 @@
   [@.disabled]="disableAnimations">
   <div [ngClass]="{'pointer': dismissOnClick}">
     <div class="ngx-n-notification alert" role="alert" *ngFor="let notification of notifications; let i = index"
-      [ngClass]="'alert-'+ notification.style" (click)="onToastClick(i)" [@animateToasts]>
+      [ngClass]="'alert-'+ notification.style" (click)="onToastClick(i)" (keyup)="onKeyUp()" [@animateToasts]>
       <button type="button" class="pointer close" aria-label="Close" (click)="removeNotification(i)">
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16"
           aria-hidden="true">

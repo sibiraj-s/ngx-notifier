@@ -1,10 +1,12 @@
 import { Config } from 'tailwindcss';
 
 const config: Config = {
-  content: [
-    // @todo: tailwind resolves from the root, regardless of project location
-    './projects/demo/src/**/*.{html,ts}',
-  ],
+  content: {
+    relative: true,
+    files: [
+      './src/**/*.{html,ts}',
+    ],
+  },
   theme: {
     extend: {},
   },

@@ -10,10 +10,8 @@
       ],
       "parserOptions": {
         "project": [
-          "projects/ngx-notifier/tsconfig.lib.json",
-          "projects/ngx-notifier/tsconfig.spec.json"
-        ],
-        "createDefaultProgram": true
+          "projects/ngx-notifier/tsconfig.(app|lib|spec).json"
+        ]
       },
       "rules": {
         "@angular-eslint/directive-selector": [

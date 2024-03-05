@@ -12,10 +12,10 @@
   ],
   "sideEffects": false,
   "peerDependencies": {
-    "@angular/animations": ">=16.0.0",
-    "@angular/common": ">=16.0.0",
-    "@angular/core": ">=6.0.0",
-    "@angular/platform-browser": ">=6.0.0",
+    "@angular/animations": ">=17.0.0",
+    "@angular/common": ">=17.0.0",
+    "@angular/core": ">=17.0.0",
+    "@angular/platform-browser": ">=17.0.0",
     "rxjs": "^7.8.0"
   },
   "dependencies": {

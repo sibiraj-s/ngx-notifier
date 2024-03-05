@@ -143,6 +143,11 @@ export class NgxNotifierComponent implements OnDestroy {
     }
   }
 
+  // dummy keyup handler
+  onKeyUp():void {
+    // do nothing
+  }
+
   /** clear last inserted toast notification */
   private clearLastToast(): void {
     const index = this.notifications.map((e) => e.id).indexOf(this.lastInsertedNotificationId);

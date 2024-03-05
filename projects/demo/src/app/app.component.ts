@@ -1,11 +1,13 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
-import { NgxNotifierService } from 'ngx-notifier';
+import { NgxNotifierModule, NgxNotifierService } from 'ngx-notifier';
 import { jsonArray } from './data';
 
 /** App Component is the root component of the application */
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [NgxNotifierModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None,
