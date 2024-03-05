@@ -12,6 +12,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v12.0.0 (2024-03-05)
+
+#### Breaking Changes
+
+- requires angular 17 or greater ([af7294e](https://github.com/sibiraj-s/ngx-notifier/commit/af7294e))
+
 ## v11.0.0 (2023-07-01)
 
 #### Breaking Changes
