@@ -12,6 +12,12 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v13.0.0 (2024-05-11)
+
+#### Breaking Changes
+
+- export component as standalone component ([e764ddd](https://github.com/sibiraj-s/ngx-notifier/commit/e764ddd))
+
 ## v12.0.0 (2024-03-05)
 
 #### Breaking Changes
