@@ -126,7 +126,7 @@ Notifier component accepts
 
 ### Demo
 
-Demo at stackblitz [ngx-notifier](https://ngx-notifier.stackblitz.io)
+Demo at stackblitz [ngx-notifier](https://stackblitz.com/edit/ngx-notifier)
 
 [npm]: https://www.npmjs.com/
 [yarn]: https://yarnpkg.com/lang/en/
