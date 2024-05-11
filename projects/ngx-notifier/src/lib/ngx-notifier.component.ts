@@ -7,12 +7,15 @@ import { takeUntil } from 'rxjs/operators';
 import { INotification } from './others/notification-helper';
 
 import { NgxNotifierService } from './services/ngx-notifier.service';
+import { CommonModule } from '@angular/common';
 
 /**
  * Notifier compoent, which holds all the notifications can be accessed via `ngx-notifier` selector
  */
 @Component({
   selector: 'ngx-notifier',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './ngx-notifier.component.html',
   styleUrls: ['./ngx-notifier.component.scss'],
   animations: [

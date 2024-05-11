@@ -1,8 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgxNotifierComponent } from './ngx-notifier.component';
-import { NgxNotifierService } from './services/ngx-notifier.service';
 
 describe('NgxNotifierComponent', () => {
   let component: NgxNotifierComponent;
@@ -10,14 +8,9 @@ describe('NgxNotifierComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule],
-      declarations: [NgxNotifierComponent],
-      providers: [NgxNotifierService],
-    })
-      .compileComponents();
-  });
+      imports: [NgxNotifierComponent],
+    }).compileComponents();
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(NgxNotifierComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

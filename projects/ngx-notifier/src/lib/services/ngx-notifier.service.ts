@@ -4,7 +4,9 @@ import { Subject } from 'rxjs';
 import { Notification } from '../others/notification-helper';
 
 /** Notification Service, recieves notifications from user and interacts with components */
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class NgxNotifierService {
   /** notification which can be subscribed on new messages */
   notification: Subject<Notification> = new Subject<Notification>();
