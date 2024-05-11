@@ -38,53 +38,52 @@ yarn add ngx-notifier
 
 ### Usage
 
-Import `NgxNotifierModule` and `BrowserAnimationsModule`
+Import `provideAnimations` in your app.config to enable required animations
 
 ```typescript
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxNotifierModule } from 'ngx-notifier';
+import { ApplicationConfig } from '@angular/core';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
-@NgModule({
-  imports: [ BrowserAnimationsModule, NgxNotifierModule ]
-})
+export const appConfig: ApplicationConfig = {
+  providers: [provideAnimations()],
+};
 ```
 
-Then in HTML
+Then, import `NgxNotifierComponent` in your app.component.ts
+
+```ts
+import { NgxNotifierComponent, NgxNotifierService } from 'ngx-notifier';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [NgxNotifierComponent],
+  templateUrl: './app.component.html',
+})
+export class AppComponent {
+  constructor(private ngxNotifierService: NgxNotifierService) {}
+
+  createNotification() {
+    this.ngxNotifierService.createToast(message, style, duration);
+  }
+}
+```
+
+Then, add the `ngx-notifier` component in your app.component.html
 
 ```html
 <ngx-notifier></ngx-notifier>
 ```
 
-Then in TS
-
-```typescript
-import { NgxNotifierService } from './ngx-notifier/services/ngx-notifier.service';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [AppService]
-})
-
-export class AppComponent {
-  constructor(private ngxNotifierService: NgxNotifierService) { }
-
-  createNotification(){
-      this.ngxNotifierService.createToast(message:string, style:string, duration: number);
-  }
-}
-```
-
 #### Create a toast
 
 ```ts
-this.ngxNotifierService.createToast(message:string, style:string, duration: number);
+this.ngxNotifierService.createToast(message, style, duration);
 ```
 
-* **message** message to be sent as notification
-* **style** notification style, which can be the following `success|danger|warning|info`. Default is `info`
-* **duration** in milliseconds, timeout for the notification
+- **message** message to be sent as notification
+- **style** notification style, which can be the following `success|danger|warning|info`. Default is `info`
+- **duration** in milliseconds, timeout for the notification
 
 #### Clear all toasts
 
@@ -103,25 +102,27 @@ this.ngxNotifierService.clearLast();
 Notifier component accepts
 
 ```html
-<ngx-notifier [allowDuplicates]="true"
-              [allowHTML]="false"
-              [className]="myCustomClassName"
-              [duration]="5000"
-              [disableAnimations]="false"
-              [dismissOnClick]="false"
-              [insertOnTop]="true"
-              [max]="5">
+<ngx-notifier
+  [allowDuplicates]="true"
+  [allowHTML]="false"
+  [className]="myCustomClassName"
+  [duration]="5000"
+  [disableAnimations]="false"
+  [dismissOnClick]="false"
+  [insertOnTop]="true"
+  [max]="5"
+>
 </ngx-notifier>
 ```
 
-* **allowDuplicates:** whether to allow duplicate messages in notifications
-* **allowHTML** whether to allow or display HTML as it is, HTML will be sanitized and any JS will be maked as unsafe.
-* **className** custom class for notifications
-* **disableAnimations** whether to enable or disable animations for the toast.
-* **dismissOnClick:** dismiss notification on click
-* **duration** time in milliseconds for dismissing notifications, default is 60s
-* **insertOnTop** whether to insert notification on top or bottom
-* **max:** maximum number of notifications to be displayed
+- **allowDuplicates:** whether to allow duplicate messages in notifications
+- **allowHTML** whether to allow or display HTML as it is, HTML will be sanitized and any JS will be maked as unsafe.
+- **className** custom class for notifications
+- **disableAnimations** whether to enable or disable animations for the toast.
+- **dismissOnClick:** dismiss notification on click
+- **duration** time in milliseconds for dismissing notifications, default is 60s
+- **insertOnTop** whether to insert notification on top or bottom
+- **max:** maximum number of notifications to be displayed
 
 ### Demo
 
