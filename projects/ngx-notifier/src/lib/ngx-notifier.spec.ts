@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxNotifierComponent } from './ngx-notifier.component';
+import { NgxNotifier } from './ngx-notifier';
 
-describe('NgxNotifierComponent', () => {
-  let component: NgxNotifierComponent;
-  let fixture: ComponentFixture<NgxNotifierComponent>;
+describe('NgxNotifier', () => {
+  let component: NgxNotifier;
+  let fixture: ComponentFixture<NgxNotifier>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NgxNotifierComponent],
+      imports: [NgxNotifier],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(NgxNotifierComponent);
+    fixture = TestBed.createComponent(NgxNotifier);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

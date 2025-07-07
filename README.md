@@ -49,16 +49,16 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
-Then, import `NgxNotifierComponent` in your app.component.ts
+Then, import `NgxNotifier` in your app.component.ts
 
 ```ts
-import { NgxNotifierComponent, NgxNotifierService } from 'ngx-notifier';
+import { NgxNotifier, NgxNotifierService } from 'ngx-notifier';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NgxNotifierComponent],
-  templateUrl: './app.component.html',
+  imports: [NgxNotifier],
+  templateUrl: './app.html',
 })
 export class AppComponent {
   constructor(private ngxNotifierService: NgxNotifierService) {}

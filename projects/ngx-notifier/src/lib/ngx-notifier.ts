@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, SecurityContext } from '@angular/core';
+import { Component, inject, Input, OnDestroy, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { trigger, style, transition, animate, state } from '@angular/animations';
 import { Subject } from 'rxjs';
@@ -16,8 +16,8 @@ import { CommonModule } from '@angular/common';
   selector: 'ngx-notifier',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './ngx-notifier.component.html',
-  styleUrls: ['./ngx-notifier.component.scss'],
+  templateUrl: './ngx-notifier.html',
+  styleUrls: ['./ngx-notifier.scss'],
   animations: [
     trigger('animateToasts', [
       state('void', style({ opacity: 0 })),
@@ -28,8 +28,8 @@ import { CommonModule } from '@angular/common';
   ],
 })
 
-export class NgxNotifierComponent implements OnDestroy {
-  private componentDestroyed$: Subject<boolean> = new Subject();
+export class NgxNotifier implements OnDestroy {
+  private componentDestroyed$ = new Subject<boolean>();
 
   /** whether to allow duplicate messages or not */
   @Input() allowDuplicates = true;
@@ -54,12 +54,10 @@ export class NgxNotifierComponent implements OnDestroy {
   /** id of last inserted message */
   private lastInsertedNotificationId!: string;
 
-  /**
-   * NgxNotifierComponent Constructor
-   *
-   * @param ngxNotifierService subscribe to get values form notifier service
-   */
-  constructor(private ngxNotifierService: NgxNotifierService, private domSanitizer: DomSanitizer) {
+  ngxNotifierService = inject(NgxNotifierService);
+  domSanitizer = inject(DomSanitizer);
+
+  constructor() {
     this.ngxNotifierService.notification.pipe(
       takeUntil(this.componentDestroyed$),
     ).subscribe((notification: INotification) => { this.updateNotifications(notification); });
