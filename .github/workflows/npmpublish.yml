@@ -1,11 +1,12 @@
 name: NPM Publish
 
 env:
-  NODE_VERSION: 20
+  NODE_VERSION: 22
 
 on:
   push:
-    tags: v*
+    tags:
+      - v*
 
 jobs:
   build-publish:
