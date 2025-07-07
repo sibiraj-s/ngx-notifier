@@ -1,3 +1,5 @@
+@reference 'tailwindcss';
+
 .btn {
   @apply border-2 rounded-lg px-3 py-1 cursor-pointer focus:outline-none focus:ring-1;
 }

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
 
 import { NgxNotifierComponent, NgxNotifierService } from 'ngx-notifier';
 import { jsonArray } from './data';
@@ -8,16 +8,15 @@ import { jsonArray } from './data';
   selector: 'app-root',
   standalone: true,
   imports: [NgxNotifierComponent],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  templateUrl: './app.html',
+  styleUrls: ['./app.css'],
   encapsulation: ViewEncapsulation.None,
 })
 
-export class AppComponent {
+export class App {
   title = 'A Simple Notification Service for Angular Applications.';
   jsonArray = jsonArray;
-
-  constructor(private ngxNotifierService: NgxNotifierService) { }
+  ngxNotifierService = inject(NgxNotifierService);
 
   /** crates a toast message */
   createToast(style: string): void {

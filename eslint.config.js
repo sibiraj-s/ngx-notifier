@@ -58,6 +58,7 @@ export default tseslint.config(
           style: "kebab-case",
         },
       ],
+      'no-console': 'off',
     },
   },
   {
