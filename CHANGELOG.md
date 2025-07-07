@@ -12,6 +12,13 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v14.0.0 (2025-07-08)
+
+#### Breaking Changes
+
+- NgxNotifierComponent is renamed to NgxNotifier ([d508889](https://github.com/sibiraj-s/ngx-notifier/commit/d508889))
+- requires angular 20 or greater ([31def88](https://github.com/sibiraj-s/ngx-notifier/commit/31def88))
+
 ## v13.0.0 (2024-05-11)
 
 #### Breaking Changes
