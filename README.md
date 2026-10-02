@@ -38,18 +38,7 @@ yarn add ngx-notifier
 
 ### Usage
 
-Import `provideAnimations` in your app.config to enable required animations
-
-```typescript
-import { ApplicationConfig } from '@angular/core';
-import { provideAnimations } from '@angular/platform-browser/animations';
-
-export const appConfig: ApplicationConfig = {
-  providers: [provideAnimations()],
-};
-```
-
-Then, import `NgxNotifier` in your app.component.ts
+Import `NgxNotifier` in your app.component.ts
 
 ```ts
 import { NgxNotifier, NgxNotifierService } from 'ngx-notifier';

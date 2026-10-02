@@ -11,9 +11,9 @@ export class NgxNotifierService {
   /** notification which can be subscribed on new messages */
   notification: Subject<Notification> = new Subject<Notification>();
   /** clear all toast notifications */
-  clearToasts: Subject<void> = new Subject();
+  clearToasts = new Subject<void>();
   /** clear last toast notification */
-  clearLastToast: Subject<void> = new Subject();
+  clearLastToast = new Subject<void>();
 
   /** pushes a new notification */
   createToast(message: string, style?: string, duration?: number): void {

@@ -1,13 +1,11 @@
-import { Component, inject, Input, OnDestroy, SecurityContext } from '@angular/core';
+import { Component, inject, Input, SecurityContext, signal } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
-import { trigger, style, transition, animate, state } from '@angular/animations';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { INotification } from './others/notification-helper';
 
 import { NgxNotifierService } from './services/ngx-notifier.service';
-import { CommonModule } from '@angular/common';
 
 /**
  * Notifier compoent, which holds all the notifications can be accessed via `ngx-notifier` selector
@@ -15,22 +13,11 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'ngx-notifier',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './ngx-notifier.html',
+  imports: [NgClass],
+  templateUrl: './ngx-notifier.component.html',
   styleUrls: ['./ngx-notifier.scss'],
-  animations: [
-    trigger('animateToasts', [
-      state('void', style({ opacity: 0 })),
-      transition(':enter, :leave', [ // void <=> *
-        animate('0.3s ease'),
-      ]),
-    ]),
-  ],
 })
-
-export class NgxNotifier implements OnDestroy {
-  private componentDestroyed$ = new Subject<boolean>();
-
+export class NgxNotifier {
   /** whether to allow duplicate messages or not */
   @Input() allowDuplicates = true;
   /** allow HTML in notification */
@@ -48,27 +35,42 @@ export class NgxNotifier implements OnDestroy {
   /** Maximum number of notifications to keep */
   @Input() max = 5;
 
+  /** notifications are kept in a signal, so the view is updated without zone.js and with OnPush */
+  private readonly notificationsState = signal<INotification[]>([]);
+
   /** array of notifications */
-  notifications: INotification[] = [];
+  get notifications(): INotification[] {
+    return this.notificationsState();
+  }
+
+  /** class applied while a notification enters */
+  get enterAnimation(): string {
+    return this.disableAnimations ? '' : 'ngx-n-enter';
+  }
+
+  /** class applied while a notification leaves */
+  get leaveAnimation(): string {
+    return this.disableAnimations ? '' : 'ngx-n-leave';
+  }
 
   /** id of last inserted message */
-  private lastInsertedNotificationId!: string;
+  private lastInsertedNotificationId?: string;
 
   ngxNotifierService = inject(NgxNotifierService);
   domSanitizer = inject(DomSanitizer);
 
   constructor() {
-    this.ngxNotifierService.notification.pipe(
-      takeUntil(this.componentDestroyed$),
-    ).subscribe((notification: INotification) => { this.updateNotifications(notification); });
+    this.ngxNotifierService.notification.pipe(takeUntilDestroyed()).subscribe((notification: INotification) => {
+      this.updateNotifications(notification);
+    });
 
-    this.ngxNotifierService.clearToasts.pipe(
-      takeUntil(this.componentDestroyed$),
-    ).subscribe(() => { this.notifications = []; });
+    this.ngxNotifierService.clearToasts.pipe(takeUntilDestroyed()).subscribe(() => {
+      this.notificationsState.set([]);
+    });
 
-    this.ngxNotifierService.clearLastToast.pipe(
-      takeUntil(this.componentDestroyed$),
-    ).subscribe(() => { this.clearLastToast(); });
+    this.ngxNotifierService.clearLastToast.pipe(takeUntilDestroyed()).subscribe(() => {
+      this.clearLastToast();
+    });
   }
 
   /**
@@ -78,47 +80,45 @@ export class NgxNotifier implements OnDestroy {
    */
   private updateNotifications(notification: INotification): void {
     // checks whether the message is alrady present in notifications
-    const index = this.notifications.map((e) => e.message).indexOf(notification.message);
+    const isDuplicate = this.notifications.some((e) => e.message === notification.message);
 
-    if (!this.allowDuplicates) {
-      if (index !== -1) {
-        return;
-      }
+    if (!this.allowDuplicates && isDuplicate) {
+      return;
     }
 
     // save the last inserted Id
     this.lastInsertedNotificationId = notification.id;
 
     // sanitize html if enableHTML is set to true
-    let sanitizedMessage: string | null = null;
-    if (notification.message && this.allowHTML) {
-      sanitizedMessage = this.domSanitizer.sanitize(SecurityContext.HTML, notification.message);
-    }
-    // set sanitized output to notification message
-    notification.message = sanitizedMessage || notification.message;
+    const message =
+      notification.message && this.allowHTML
+        ? (this.domSanitizer.sanitize(SecurityContext.HTML, notification.message) ?? '')
+        : notification.message;
+
+    const newNotification: INotification = { ...notification, message };
 
     // insert notification in the first position of the array
-    if (this.insertOnTop) {
-      this.notifications.unshift(notification);
-    } else {
-      this.notifications.push(notification);
-    }
+    const notifications = this.insertOnTop
+      ? [newNotification, ...this.notifications]
+      : [...this.notifications, newNotification];
 
     /**
      * remove the last inserted element if max has
      * pop or shift based on `insertOnTop`
      */
-    if (this.notifications.length > this.max) {
+    if (notifications.length > this.max) {
       if (this.insertOnTop) {
-        this.notifications.pop();
+        notifications.pop();
       } else {
-        this.notifications.shift();
+        notifications.shift();
       }
     }
 
+    this.notificationsState.set(notifications);
+
     // clear notification in given time
     setTimeout(() => {
-      this.notifications.splice(index, 1);
+      this.removeNotificationById(newNotification.id);
     }, notification.duration || this.duration);
   }
 
@@ -128,9 +128,16 @@ export class NgxNotifier implements OnDestroy {
    * @param index position of the element
    */
   removeNotification(index: number): void {
-    if (index !== undefined || index !== null) {
-      this.notifications.splice(index, 1);
-    }
+    this.notificationsState.update((notifications) => notifications.filter((_, i) => i !== index));
+  }
+
+  /**
+   * remove the element from the array based on id
+   *
+   * @param id id of the notification
+   */
+  private removeNotificationById(id: string): void {
+    this.notificationsState.update((notifications) => notifications.filter((e) => e.id !== id));
   }
 
   /**
@@ -145,22 +152,14 @@ export class NgxNotifier implements OnDestroy {
   }
 
   // dummy keyup handler
-  onKeyUp():void {
+  onKeyUp(): void {
     // do nothing
   }
 
   /** clear last inserted toast notification */
   private clearLastToast(): void {
-    const index = this.notifications.map((e) => e.id).indexOf(this.lastInsertedNotificationId);
-
-    if (this.notifications.length !== 0 && index !== -1) {
-      this.notifications.splice(index, 1);
+    if (this.lastInsertedNotificationId) {
+      this.removeNotificationById(this.lastInsertedNotificationId);
     }
-  }
-
-  /** stop subscription when component is destroyed */
-  ngOnDestroy(): void {
-    this.componentDestroyed$.next(true);
-    this.componentDestroyed$.complete();
   }
 }

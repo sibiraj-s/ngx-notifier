@@ -1,2 +1,5 @@
-'*.{js,ts,html}': eslint --fix
-'*.{md,scss,html}': prettier --write
+'*.{js,ts}': eslint --fix
+'*.html':
+  - eslint --fix
+  - oxfmt --no-error-on-unmatched-pattern
+'*.{md,scss,yml,yaml}': oxfmt --no-error-on-unmatched-pattern

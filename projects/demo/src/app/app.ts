@@ -8,11 +8,10 @@ import { jsonArray } from './data';
   selector: 'app-root',
   standalone: true,
   imports: [NgxNotifier],
-  templateUrl: './app.html',
+  templateUrl: './app.component.html',
   styleUrls: ['./app.css'],
   encapsulation: ViewEncapsulation.None,
 })
-
 export class App {
   title = 'A Simple Notification Service for Angular Applications.';
   jsonArray = jsonArray;
