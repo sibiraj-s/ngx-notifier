@@ -26,5 +26,4 @@ jobs:
 
       - name: Publish to NPM
         run: npm publish dist/ngx-notifier/
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+
