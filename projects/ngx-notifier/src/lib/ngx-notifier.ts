@@ -53,8 +53,8 @@ export class NgxNotifier {
     return this.disableAnimations ? '' : 'ngx-n-leave';
   }
 
-  /** id of last inserted message */
-  private lastInsertedNotificationId?: string;
+  /** ids of the notifications in the order they were inserted, oldest first */
+  private insertionOrder: string[] = [];
 
   ngxNotifierService = inject(NgxNotifierService);
   domSanitizer = inject(DomSanitizer);
@@ -79,21 +79,19 @@ export class NgxNotifier {
    * @param notification notification element
    */
   private updateNotifications(notification: INotification): void {
-    // checks whether the message is alrady present in notifications
-    const isDuplicate = this.notifications.some((e) => e.message === notification.message);
-
-    if (!this.allowDuplicates && isDuplicate) {
-      return;
-    }
-
-    // save the last inserted Id
-    this.lastInsertedNotificationId = notification.id;
-
     // sanitize html if enableHTML is set to true
     const message =
       notification.message && this.allowHTML
         ? (this.domSanitizer.sanitize(SecurityContext.HTML, notification.message) ?? '')
         : notification.message;
+
+    // checks whether the message is alrady present in notifications,
+    // stored messages are sanitized so the sanitized message is compared
+    const isDuplicate = this.notifications.some((e) => e.message === message);
+
+    if (!this.allowDuplicates && isDuplicate) {
+      return;
+    }
 
     const newNotification: INotification = { ...notification, message };
 
@@ -115,6 +113,10 @@ export class NgxNotifier {
     }
 
     this.notificationsState.set(notifications);
+
+    // keep track of the insertion order of the visible notifications
+    const visibleIds = new Set(notifications.map((e) => e.id));
+    this.insertionOrder = [...this.insertionOrder, newNotification.id].filter((id) => visibleIds.has(id));
 
     // clear notification in given time
     setTimeout(() => {
@@ -151,15 +153,41 @@ export class NgxNotifier {
     }
   }
 
+  /**
+   * close button handler, the click is not propagated to the toast so that
+   * `dismissOnClick` does not remove another notification
+   *
+   * @param event click event
+   * @param id id of the notification
+   */
+  protected onCloseClick(event: Event, id: string): void {
+    event.stopPropagation();
+    this.removeNotificationById(id);
+  }
+
+  /**
+   * toast click handler
+   *
+   * @param id id of the notification
+   */
+  protected onToastClickById(id: string): void {
+    if (this.dismissOnClick) {
+      this.removeNotificationById(id);
+    }
+  }
+
   // dummy keyup handler
   onKeyUp(): void {
     // do nothing
   }
 
-  /** clear last inserted toast notification */
+  /** clear the most recently inserted notification that is still visible */
   private clearLastToast(): void {
-    if (this.lastInsertedNotificationId) {
-      this.removeNotificationById(this.lastInsertedNotificationId);
+    const visibleIds = new Set(this.notifications.map((e) => e.id));
+    const lastId = this.insertionOrder.filter((id) => visibleIds.has(id)).at(-1);
+
+    if (lastId) {
+      this.removeNotificationById(lastId);
     }
   }
 }

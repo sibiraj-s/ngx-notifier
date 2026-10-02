@@ -1,17 +1,22 @@
 @if (notifications.length !== 0) {
   <div class="ngx-notifier" [ngClass]="className" [animate.enter]="enterAnimation" [animate.leave]="leaveAnimation">
     <div [ngClass]="{ pointer: dismissOnClick }">
-      @for (notification of notifications; track notification.id; let i = $index) {
+      @for (notification of notifications; track notification.id) {
         <div
           class="ngx-n-notification alert"
           role="alert"
           [ngClass]="'alert-' + notification.style"
-          (click)="onToastClick(i)"
+          (click)="onToastClickById(notification.id)"
           (keyup)="onKeyUp()"
           [animate.enter]="enterAnimation"
           [animate.leave]="leaveAnimation"
         >
-          <button type="button" class="pointer close" aria-label="Close" (click)="removeNotification(i)">
+          <button
+            type="button"
+            class="pointer close"
+            aria-label="Close"
+            (click)="onCloseClick($event, notification.id)"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="12"

@@ -214,3 +214,131 @@ describe('NgxNotifier content', () => {
     expect(fixture.nativeElement.querySelector('.ngx-notifier').classList).toContain('custom');
   });
 });
+
+describe('NgxNotifier dismissing', () => {
+  it('removes only the closed toast with dismissOnClick', async () => {
+    fixture.componentRef.setInput('dismissOnClick', true);
+    service.createToast('first');
+    service.createToast('second');
+    await render();
+
+    (fixture.nativeElement.querySelector('.close') as HTMLElement).click();
+    await render();
+
+    expect(messages()).toEqual(['first']);
+  });
+
+  it('dismisses the clicked toast with dismissOnClick', async () => {
+    fixture.componentRef.setInput('dismissOnClick', true);
+    service.createToast('first');
+    service.createToast('second');
+    await render();
+
+    (fixture.nativeElement.querySelectorAll('.ngx-n-notification')[1] as HTMLElement).click();
+    await render();
+
+    expect(messages()).toEqual(['second']);
+  });
+
+  it('removes a toast by index', async () => {
+    service.createToast('first');
+    service.createToast('second');
+    await render();
+
+    component.removeNotification(1);
+    await render();
+
+    expect(messages()).toEqual(['second']);
+  });
+
+  it('removes toasts after the default duration of 60s', () => {
+    vi.useFakeTimers();
+    service.createToast('first');
+    fixture.detectChanges();
+
+    vi.advanceTimersByTime(59999);
+    fixture.detectChanges();
+
+    expect(messages()).toEqual(['first']);
+
+    vi.advanceTimersByTime(1);
+    fixture.detectChanges();
+
+    expect(messages()).toEqual([]);
+  });
+
+  it('stops receiving toasts once destroyed', () => {
+    fixture.destroy();
+
+    expect(() => service.createToast('first')).not.toThrow();
+    expect(component.notifications).toEqual([]);
+  });
+});
+
+describe('NgxNotifier clearLast', () => {
+  it('clears the newest toasts one by one', async () => {
+    service.createToast('first');
+    service.createToast('second');
+    service.createToast('third');
+
+    service.clearLast();
+    service.clearLast();
+    await render();
+
+    expect(messages()).toEqual(['first']);
+  });
+
+  it('clears the newest remaining toast when the newest was already closed', async () => {
+    service.createToast('first');
+    service.createToast('second');
+    service.createToast('third');
+    await render();
+
+    // close the newest toast, which is on top
+    (fixture.nativeElement.querySelector('.close') as HTMLElement).click();
+    service.clearLast();
+    await render();
+
+    expect(messages()).toEqual(['first']);
+  });
+
+  it('clears the newest toast when inserting at the bottom', async () => {
+    fixture.componentRef.setInput('insertOnTop', false);
+    service.createToast('first');
+    service.createToast('second');
+    service.clearLast();
+    service.clearLast();
+    await render();
+
+    expect(messages()).toEqual([]);
+  });
+
+  it('does nothing without toasts', async () => {
+    service.clearLast();
+    await render();
+
+    expect(messages()).toEqual([]);
+  });
+});
+
+describe('NgxNotifier duplicates with HTML', () => {
+  it('ignores duplicate HTML messages that are changed by sanitization', async () => {
+    fixture.componentRef.setInput('allowHTML', true);
+    fixture.componentRef.setInput('allowDuplicates', false);
+    service.createToast('<b onclick="alert(1)">bold</b>');
+    service.createToast('<b onclick="alert(1)">bold</b>');
+    await render();
+
+    expect(messages()).toEqual(['bold']);
+  });
+
+  it('allows the same message again once it is removed', async () => {
+    fixture.componentRef.setInput('allowDuplicates', false);
+    service.createToast('first');
+    service.clearLast();
+    service.createToast('first');
+    await render();
+
+    expect(messages()).toEqual(['first']);
+  });
+});
