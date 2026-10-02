@@ -12,6 +12,31 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 
+## v15.0.0 (2026-10-02)
+
+#### Features
+
+- use native animations, `@angular/animations` and `provideAnimations` are no longer required ([e950aaf](https://github.com/sibiraj-s/ngx-notifier/commit/e950aaf))
+- support zoneless applications and `OnPush` change detection ([e950aaf](https://github.com/sibiraj-s/ngx-notifier/commit/e950aaf))
+
+#### Bug Fixes
+
+- notification timeout removing a different notification ([e950aaf](https://github.com/sibiraj-s/ngx-notifier/commit/e950aaf))
+- close button removing two notifications when `dismissOnClick` is enabled ([eaf76f9](https://github.com/sibiraj-s/ngx-notifier/commit/eaf76f9))
+- `clearLast` removing only one notification ([eaf76f9](https://github.com/sibiraj-s/ngx-notifier/commit/eaf76f9))
+- duplicate HTML notifications shown when `allowDuplicates` is disabled ([eaf76f9](https://github.com/sibiraj-s/ngx-notifier/commit/eaf76f9))
+
+#### Breaking Changes
+
+- requires angular 22 or greater ([e950aaf](https://github.com/sibiraj-s/ngx-notifier/commit/e950aaf))
+- `notifications` on `NgxNotifier` is now readonly ([e950aaf](https://github.com/sibiraj-s/ngx-notifier/commit/e950aaf))
+
+#### Internal
+
+- migrate tests to vitest ([e950aaf](https://github.com/sibiraj-s/ngx-notifier/commit/e950aaf))
+- publish with npm trusted publishing and provenance ([4a4775f](https://github.com/sibiraj-s/ngx-notifier/commit/4a4775f), [e950aaf](https://github.com/sibiraj-s/ngx-notifier/commit/e950aaf))
+- bump github actions ([e950aaf](https://github.com/sibiraj-s/ngx-notifier/commit/e950aaf))
+
 ## v14.0.0 (2025-07-08)
 
 #### Breaking Changes
