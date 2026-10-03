@@ -30,4 +30,4 @@ jobs:
           NODE_ENV: production
 
       - name: Publish to NPM
-        run: npm publish dist/ngx-notifier/ --provenance
+        run: npm stage publish dist/ngx-notifier/
